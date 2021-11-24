@@ -1,4 +1,4 @@
-# Estudo SQL
+# Estudo SQL utilizando PostgreSQL
 
 ## Comandos básicos SQL
 <details>
