@@ -45,7 +45,7 @@ select * from customer where city in ('Seattle', 'New York City', 'Fresno', 'Chi
 
 
 #### Selecionar clientes por idade 
-select * from customer where age between 20 and 50  order by age asc ;
+select * from customer where age between 20 and 50  order by age asc ;<br/>
 select * from customer where age not between 20 and 30  order by age asc ;
 
 
@@ -53,6 +53,10 @@ select * from customer where age not between 20 and 30  order by age asc ;
 
 Clientes que o primeiro nome tem cinco letras e a cidade começa com L <br/>
 select * from customer where customer_name like '_____ %' AND city like 'L%' order by customer_name asc
+
+Clientes que o primeiro nome tem cinco letras e a cidade não começa com A <br/>
+select * from customer where customer_name like '_____ %' AND city not like 'A%' order by city asc
+
 
 Clientes que o primeiro nome tem cinco letras, a cidade começa com L e são dos estados de Ohio e Colorado <br/>
 select * from customer where customer_name like '_____ %' AND 
