@@ -40,7 +40,7 @@ alter table science_class rename column name to student_name;</details>
 
 #  Utilizando db Supermart com tabelas customer, sales e products.
 
-#### Selecionar clientes por localidade
+#### Selecionar clientes por localidade usando WHERE e IN
 ```
 select * from customer where state in ('California', 'New York');
 
@@ -48,7 +48,7 @@ select * from customer where city in ('Seattle', 'New York City', 'Fresno', 'Chi
 ```
 
 
-#### Selecionar clientes por idade 
+#### Selecionar clientes por idade usando WHERE e BETWEEN e NOT
 
 Idade entre 20 e 50<br/>
 ```
