@@ -14,10 +14,12 @@ insert into science_class values (1, 'Ana', 90), (2, 'Bruno',100), (3,'Carlos',8
 
 ## Selecionar 
 
-Selecionar todos
+Selecionar todos:
+
 select * from science_class;
 
-Selecionar melhores alunos
+Selecionar melhores alunos usando where:
+
 select * from science_class where science_marks>90;
 
 ## Alterar dados
@@ -27,6 +29,7 @@ update science_class set  science_marks = 110 WHERE name = 'Bruno';
 ## Deletar linhas
 
 insert into science_class values (5, 'Evandro', 30);
+
 delete from science_class where name = 'Evandro';
 
 ## Alterar propriedade da coluna
