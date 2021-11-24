@@ -1,6 +1,8 @@
-# Comandos básicos SQL
+# Estudo SQL
 
-Algumas queries que estou rodando no estudo de SQL utilizando tabelas criadas manualmente
+## Comandos básicos SQL
+<details>
+<summary>Alguns comandos básicos que estou rodando no estudo de SQL utilizando tabelas criadas manualmente</summary>
 
 #### Criar tabela
 
@@ -34,48 +36,66 @@ delete from science_class where name = 'Evandro';
 
 #### Alterar propriedade da coluna
 
-alter table science_class rename column name to student_name;
+alter table science_class rename column name to student_name;</details>
 
-#  Utilizando db Supermart <br/>Contêm tabelas customer, sales e products.
+#  Utilizando db Supermart com tabelas customer, sales e products.
 
 #### Selecionar clientes por localidade
+```
 select * from customer where state in ('California', 'New York');
 
 select * from customer where city in ('Seattle', 'New York City', 'Fresno', 'Chicado') ;
+```
 
 
 #### Selecionar clientes por idade 
 
 Idade entre 20 e 50<br/>
-select * from customer where age between 20 and 50  order by age asc ;<br/>
+```
+select * from customer where age between 20 and 50  order by age asc ;
+```
 
 Idade não está entre 20 e 30<br/>
+```
 select * from customer where age not between 20 and 30  order by age asc ;
+```
 
 
 #### Usando wildcards
 
 Clientes que o primeiro nome tem cinco letras e a cidade começa com L <br/>
+```
 select * from customer where customer_name like '_____ %' AND city like 'L%' order by customer_name asc
+```
 
 Clientes que o primeiro nome tem cinco letras e a cidade não começa com A <br/>
+```
 select * from customer where customer_name like '_____ %' AND city not like 'A%' order by city asc
+```
 
 
 Clientes que o primeiro nome tem cinco letras, a cidade começa com L e são dos estados de Ohio e Colorado <br/>
+```
 select * from customer where customer_name like '_____ %' AND 
 city like 'L%' and state in ('Ohio', 'Colorado') order by customer_name asc;
+```
 
 #### Exercícios
 
 Selecionar clientes distintos de cidades que são da região norte e sul<br/>
+```
 select distinct customer_name, city, region from customer where region in('North', 'East')
+```
 
 Selecionar todos os pedidos com valor entre 100 e 500<br/>
+```
 select * from sales where sales between 100 and 500
+```
 
 Selecionar todos os clientes que o último nome tem 4 caracteres<br/>
+```
 select * from customer where customer_name like '% ____';
+```
 
 
 
