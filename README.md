@@ -49,7 +49,7 @@ select * from customer where city in ('Seattle', 'New York City', 'Fresno', 'Chi
 Idade entre 20 e 50<br/>
 select * from customer where age between 20 and 50  order by age asc ;<br/>
 
-Idade não está entre 20 e 30
+Idade não está entre 20 e 30<br/>
 select * from customer where age not between 20 and 30  order by age asc ;
 
 
