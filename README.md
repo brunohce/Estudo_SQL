@@ -1,6 +1,6 @@
 # Estudo_SQL
 
-Algumas queries que estou rodando no estudo de SQL utilizando tabelas criadas manualmente e db Supermart.
+Algumas queries que estou rodando no estudo de SQL utilizando tabelas criadas manualmente
 
 ## Criar tabela
 
@@ -35,3 +35,5 @@ delete from science_class where name = 'Evandro';
 ## Alterar propriedade da coluna
 
 alter table science_class rename column name to student_name;
+
+#  Utilizando db Supermart.
