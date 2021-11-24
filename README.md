@@ -66,10 +66,16 @@ Clientes que o primeiro nome tem cinco letras, a cidade começa com L e são dos
 select * from customer where customer_name like '_____ %' AND 
 city like 'L%' and state in ('Ohio', 'Colorado') order by customer_name asc;
 
-#### Selecionar distintos
+#### Exercícios
 
-Selecionar clientes de cidades que são da região norte e sul<br/>
+Selecionar clientes distintos de cidades que são da região norte e sul<br/>
 select distinct customer_name, city, region from customer where region in('North', 'East')
+
+Selecionar todos os pedidos com valor entre 100 e 500<br/>
+select * from sales where sales between 100 and 500
+
+Selecionar todos os clientes que o último nome tem 4 caracteres<br/>
+select * from customer where customer_name like '% ____';
 
 
 
