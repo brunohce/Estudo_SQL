@@ -1,6 +1,6 @@
 # Estudo_SQL
 
-Algumas queries que estou rodando no estudo de SQL utilizando o db Supermart
+Algumas queries que estou rodando no estudo de SQL utilizando tabelas criadas manualmente e db Supermart.
 
 ## Criar tabela
 
