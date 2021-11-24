@@ -100,5 +100,14 @@ Selecionar todos os clientes que o último nome tem 4 caracteres<br/>
 select * from customer where customer_name like '% ____';
 ```
 
+#### Ordenamento
+
+Pode ser feito ordem ascendente (ASC) ou descendente (desc) e utilizando um ou mais parâmetros<br/>
+
+```
+select * from customer where age between 20 and 50  order by age asc ;
+
+select * from customer where age between 20 and 50  order by customer_name asc, age desc, state asc;
+```
 
 
