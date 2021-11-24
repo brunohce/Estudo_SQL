@@ -106,9 +106,13 @@ select * from customer where customer_name like '% ____';
 Pode ser feito ordem ascendente (ASC) ou descendente (desc) e utilizando um ou mais parâmetros<br/>
 
 ```
-select * from customer where age between 20 and 50  order by age asc ;
+select * from customer where state = 'Florida' order by age asc ;
 
-select * from customer where age between 20 and 50  order by customer_name asc, age desc, state asc;
+select * from customer where state = 'Florida'  order by customer_name asc, segment asc, age desc
 ```
 
+Também é possível usar um index das colunas no lugar do nome da coluna. Nesse caso customer_name é a 2a coluna, segment a 3a e age a 4a, produzindo o mesmo resultado da query anterior
+```
+select * from customer where state = 'Florida'  order by 2 asc, 3 asc, 4 desc
+```
 
