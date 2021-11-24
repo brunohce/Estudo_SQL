@@ -62,6 +62,9 @@ select * from customer where age not between 20 and 30  order by age asc ;
 
 
 #### Usando wildcards
+_  Representa um caractere<br/>
+% Representa zero ou mais caractereres
+
 
 Clientes que o primeiro nome tem cinco letras e a cidade começa com L <br/>
 ```
