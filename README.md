@@ -38,11 +38,25 @@ alter table science_class rename column name to student_name;
 
 #  Utilizando db Supermart <br/>Contêm tabelas customer, sales e products.
 
-#### Selecionar clientes da Califórnia e NY
+#### Selecionar clientes por localidade
 select * from customer where state in ('California', 'New York');
 
-#### Selecionar clientes com idades entre 20 e 50 ordenando por idade
+select * from customer where city in ('Seattle', 'New York City', 'Fresno', 'Chicado') ;
+
+
+#### Selecionar clientes por idade 
 select * from customer where age between 20 and 50  order by age asc ;
+select * from customer where age not between 20 and 30  order by age asc ;
+
+
+#### Usando wildcards
+
+Clientes que o primeiro nome tem cinco letras e a cidade começa com L <br/>
+select * from customer where customer_name like '_____ %' AND city like 'L%' order by customer_name asc
+
+Clientes que o primeiro nome tem cinco letras, a cidade começa com L e são dos estados de Ohio e Colorado <br/>
+select * from customer where customer_name like '_____ %' AND 
+city like 'L%' and state in ('Ohio', 'Colorado') order by customer_name asc;
 
 
 
