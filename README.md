@@ -115,4 +115,11 @@ Também é possível usar um index das colunas no lugar do nome da coluna. Nesse
 ```
 select * from customer where state = 'Florida'  order by 2 asc, 3 asc, 4 desc
 ```
+#### Usando ORDER e LIMIT
+
+O limite define quantas linhas vão ser retornadas. Basta ordernar pela coluna que preferir e usar o limit. Se a ordem for asc, vai selecionar os clientes com menores idades. Se a ordem for desc vai ser selecionar os clientes com maiores idades
+```
+select * from customer where segment = 'Corporate' order by 4 asc limit 10
+select * from customer where segment = 'Corporate' order by 4 desc limit 10
+```
 
