@@ -29,6 +29,6 @@ update science_class set  science_marks = 110 WHERE name = 'Bruno';
 insert into science_class values (5, 'Evandro', 30);
 delete from science_class where name = 'Evandro';
 
-# Alterar propriedade da coluna
+## Alterar propriedade da coluna
 
 alter table science_class rename column name to student_name;
