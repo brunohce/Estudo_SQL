@@ -6,7 +6,7 @@
 
 #### Criar tabela
 
-Criar uma tabela com o nome science_class com as colunas enrollment_no, name e science marks
+Para criar uma tabela com o nome science_class com as colunas enrollment_no, name e science marks
 ```
 create table science_class (enrollment_no INT, name VARCHAR, science_Marks INT);
   ```
@@ -16,13 +16,17 @@ insert into science_class values (1, 'Ana', 90), (2, 'Bruno',100), (3,'Carlos',8
 ```
 #### Selecionar 
 
-Selecionar todos:
+Selecionar todas as colunas usando o *:
 ```
 select * from science_class;
 ```
-Selecionar melhores alunos usando where:
+Selecionar alunos com nota maior que 90 usando where:
 ```
 select * from science_class where science_marks>90;
+```
+Selecionar somente o nome dos alunos com nota maior que 90 usando where:
+```
+select name from science_class where science_marks>90;
 ```
 #### Alterar dados
 ```
@@ -117,7 +121,7 @@ select * from customer where state = 'Florida'  order by 2 asc, 3 asc, 4 desc
 ```
 #### Usando ORDER e LIMIT
 
-O limite define quantas linhas vão ser retornadas. Basta ordernar pela coluna que preferir e usar o limit. Se a ordem for asc, vai selecionar os clientes com menores idades. Se a ordem for desc vai ser selecionar os clientes com maiores idades
+O limit define quantas linhas vão ser retornadas. No exemplo usei a coluna age para ordenar. Os clientes com menores idades serão selecionados se usar a ordem asc. Os clientes com maiores idades serão selecionados se usar a ordem desc.
 ```
 select * from customer where segment = 'Corporate' order by 4 asc limit 10
 select * from customer where segment = 'Corporate' order by 4 desc limit 10
