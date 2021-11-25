@@ -427,5 +427,26 @@ select city, region, count(distinct customer_id) as "Customer Count" from custom
 |Dallas|Central|13|
 |Jacksonville|South|11|
 
+#### Exercícios
 
+Tabela com valor total em vendas $, total de itens vendidos, número de pedidos, menor valor de venda, média do valor de venda, maior valor de venda
+```
+select sum(sales) as "Total Sales in $", sum(quantity) as "Total Quantity", count(distinct order_id) as "Number of Orders",
+min(sales) as "Minimum Sales Value", avg(sales) as "Average Sales Value", max(sales) as "Maximum Sales Value" from sales
+```
+|Total Sales in $|Total Quantity|Number of Orders|Minimum Sales Value|Average Sales Value|Maximum Sales Value|
+|----------------|--------------|----------------|-------------------|-------------------|-------------------|
+|2297200.860299955|37873|5009|0.444|229.8580008304938|22638.48|
 
+Listar produtos com mais de 10 itens vendidos
+```
+select product_id, count(quantity) as "By Product Sales Quantity" from sales group by product_id having count(quantity) > 10 order by 2 desc
+```
+
+|product_id|By Product Sales Quantity|
+|----------|-------------------------|
+|OFF-PA-10002377|14|
+|FUR-CH-10003774|14|
+|OFF-ST-10001490|13|
+|.
+|.
