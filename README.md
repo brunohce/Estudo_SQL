@@ -223,7 +223,7 @@ select * from sales where discount > 0 order by discount desc limit 3
 |76|US-2017-118038|2017-12-09|2017-12-11|First Class|KB-16600|OFF-BI-10004182|1.248|3|0.8|-1.9344|
 
 
-#### COUNT e AS
+#### COUNT e AS e GROUP
 
 AS é o nome que vai ser dado para a coluna ou tabela<br/>
 Para contar o número de produtos vendidos e 
