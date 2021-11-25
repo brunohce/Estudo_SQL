@@ -127,3 +127,12 @@ select * from customer where segment = 'Corporate' order by 4 asc limit 10
 select * from customer where segment = 'Corporate' order by 4 desc limit 10
 ```
 
+#### Exercícios
+
+Selecionar todas as vendas com desconto maior que zero ordenando por ordem decrescente de desconto
+```
+select * from sales where discount > 0 order by discount desc 
+```
+
+Selecionar as dez primeiras linhas de vendas com desconto maior que zero ordenando por ordem decrescente de desconto
+
