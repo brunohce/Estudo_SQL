@@ -282,6 +282,29 @@ select  product_id, sum(quantity) as "Total Quantity" from sales where product_i
 |----------|--------------|
 |FUR-CH-10000454|51|
 
+#### Usando AVG
+
+Para calcular um valor médio
+```
+select avg(age) "Average Customer Age" from customer c
+```
+|Average Customer Age|
+|--------------------|
+|44.4678436317780580|
+
+Para encontrar os estados com consumidores em média mais jovens
+```
+select state, avg(age) as "Average Customer Age" from customer c group by state order by 2
+```
+|state|Average Customer Age|
+|-----|--------------------|
+|Kansas|20.0000000000000000|
+|District of Columbia|24.0000000000000000|
+|Arkansas|30.0000000000000000|
+
+
+
+
 
 
 
