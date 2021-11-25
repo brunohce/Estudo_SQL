@@ -223,7 +223,7 @@ select * from sales where discount > 0 order by discount desc limit 3
 |76|US-2017-118038|2017-12-09|2017-12-11|First Class|KB-16600|OFF-BI-10004182|1.248|3|0.8|-1.9344|
 
 
-#### COUNT e AS e GROUP
+#### COUNT e AS
 
 AS é o nome que vai ser dado para a coluna ou tabela<br/>
 Para contar o número de produtos vendidos e 
@@ -365,5 +365,17 @@ select min(age) as "Minimum Customer Age from Philadelphia", max(age) as "Maximu
 |--------------------------------------|--------------------------------------|
 |18|70|
 
+#### Group by
+(Já foi usado mas reforçado aqui)
 
+Calcular o número de clientes em cada região
+```
+select region, count(distinct customer_id) as "Customer Count" from customer c group by region order by 2 desc
+```
+|region|Customer Count|
+|------|--------------|
+|West|255|
+|East|220|
+|Central|184|
+|South|134|
 
