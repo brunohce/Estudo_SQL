@@ -331,6 +331,39 @@ select max(sales) as "Maximum Sales Value from June 2015" from sales where order
 |3050.376|
 
 
+#### Exercícios
+
+Calcular o total de sales
+```
+select sum(sales) as "Sum of Sales" from sales
+```
+|Sum of Sales|
+|------------|
+|2297200.860299955|
+
+Calcular o total de clientes da região norte com idade entre 20 e 30
+```
+select count(customer_id) from customer where region = 'North' and age between 20 and 30
+```
+|count|
+|-----|
+|0|
+
+Calcular a idade média de clientes da região Leste
+```
+select avg(age) as "Average Customer Age from East Region" from customer c where region = 'East'
+```
+|Average Customer Age from East Region|
+|-------------------------------------|
+|44.3363636363636364|
+
+Calcular a idade mínima e máxima de clientes da Filadélfia
+```
+select min(age) as "Minimum Customer Age from Philadelphia", max(age) as "Maximum Customer Age from Philadelphia" from customer c where city = 'Philadelphia'
+```
+|Minimum Customer Age from Philadelphia|Maximum Customer Age from Philadelphia|
+|--------------------------------------|--------------------------------------|
+|18|70|
 
 
 
