@@ -138,3 +138,26 @@ Selecionar as dez primeiras linhas de vendas com desconto maior que zero ordenan
 ```
 select * from sales where discount > 0 order by discount desc limit 10
 ```
+
+#### Usando COUNT e AS
+
+AS é o nome que vai ser dado para a coluna ou tabela<br/>
+Para contar o número de produtos vendidos e 
+```
+select count(*) as "Number of Products Sold" from sales
+```
+
+Para contar o número de produtos e de vendas (pode ter mais de um produto em uma venda)
+```
+select count(order_line) as "Number of Products Sold", count(distinct order_id) as "Number of Sales" from sales
+```
+
+Para ver qual cliente fez mais compras
+```
+select customer_id , count(distinct order_id) as "Number of Sales by Customer" from sales group by customer_id order by 2 desc
+```
+
+
+
+
+
