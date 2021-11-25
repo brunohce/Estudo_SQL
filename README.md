@@ -157,6 +157,22 @@ Para ver qual cliente fez mais compras
 select customer_id , count(distinct order_id) as "Number of Sales by Customer" from sales group by customer_id order by 2 desc
 ```
 
+#### Usando SUM
+
+Para calcular o lucro total
+```
+select sum(Profit) as "Total Profit" from sales
+```
+
+Para calcular o lucro total de um produto específico
+```
+select sum(Profit) as "Total Profit" from sales where product_id = 'FUR-CH-10000454'
+```
+
+Para calcular o total de vendas um produto específico
+```
+select  product_id, sum(quantity) as "Total Quantity" from sales where product_id = 'FUR-CH-10000454' group by product_id 
+```
 
 
 
