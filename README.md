@@ -379,3 +379,18 @@ select region, count(distinct customer_id) as "Customer Count" from customer c g
 |Central|184|
 |South|134|
 
+Calcular a quantidade de itens vendidos por produto
+```
+select product_id, sum(quantity) as "Quantity Sold" from sales group by product_id order by 2 desc
+```
+|product_id|Quantity Sold|
+|----------|-------------|
+|TEC-AC-10003832|75|
+|OFF-PA-10001970|70|
+|OFF-BI-10001524|67|
+|.
+|.
+
+
+
+
