@@ -405,5 +405,24 @@ from sales group by customer_id order by 6 desc limit 5
 |TA-21385|10|7.04|1459.562|11199.968|14595.619999999999|
 |HL-15040|11|6.63|1170.2998181818182|10499.97|12873.297999999999|
 
+#### HAVING
+
+Contar número de clientes por cidade e região e selecionar somente aquelas com mais de 10 clientes
+```
+select city, region, count(distinct customer_id) as "Customer Count" from customer c group by city, region having count(3) > 10 order by 3 desc 
+```
+|city|region|Customer Count|
+|----|------|--------------|
+|New York City|East|68|
+|Los Angeles|West|58|
+|Philadelphia|East|46|
+|San Francisco|West|41|
+|Seattle|West|31|
+|Houston|Central|28|
+|Chicago|Central|19|
+|San Diego|West|13|
+|Dallas|Central|13|
+|Jacksonville|South|11|
+
 
 
