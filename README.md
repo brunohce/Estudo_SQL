@@ -135,4 +135,6 @@ select * from sales where discount > 0 order by discount desc
 ```
 
 Selecionar as dez primeiras linhas de vendas com desconto maior que zero ordenando por ordem decrescente de desconto
-
+```
+select * from sales where discount > 0 order by discount desc limit 10
+```
