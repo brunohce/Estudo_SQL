@@ -302,6 +302,14 @@ select state, avg(age) as "Average Customer Age" from customer c group by state 
 |District of Columbia|24.0000000000000000|
 |Arkansas|30.0000000000000000|
 
+Valor médio pago em comissões considerando comissão de 10%
+```
+select avg(sales * 0.10) as "Average Comission Value" from sales
+```
+|Average Comission Value|
+|-----------------------|
+|22.985800083049867|
+
 
 
 
