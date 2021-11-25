@@ -395,7 +395,7 @@ Encontrar os clientes que mais gastam (total de compras)
 ```
 select customer_id, count(distinct order_line) as "Number of Purchases", min(sales) as "Minimum Sales Value", 
 avg(sales) as "Average Sales Value", max(sales) as "Maximum Sales Value", sum(sales) as "Total Sales Value"   
-from sales group by customer_id order by 5 desc limit 5
+from sales group by customer_id order by 6 desc limit 5
 ```
 |customer_id|Number of Purchases|Minimum Sales Value|Average Sales Value|Maximum Sales Value|Total Sales Value|
 |-----------|-------------------|-------------------|-------------------|-------------------|-----------------|
