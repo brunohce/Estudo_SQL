@@ -391,6 +391,19 @@ select product_id, sum(quantity) as "Quantity Sold" from sales group by product_
 |.
 |.
 
+Encontrar os clientes que mais gastam (total de compras)
+```
+select customer_id, count(distinct order_line) as "Number of Purchases", min(sales) as "Minimum Sales Value", 
+avg(sales) as "Average Sales Value", max(sales) as "Maximum Sales Value", sum(sales) as "Total Sales Value"   
+from sales group by customer_id order by 5 desc limit 5
+```
+|customer_id|Number of Purchases|Minimum Sales Value|Average Sales Value|Maximum Sales Value|Total Sales Value|
+|-----------|-------------------|-------------------|-------------------|-------------------|-----------------|
+|SM-20320|15|3.488|1669.5366666666666|22638.48|25043.05|
+|TC-20980|12|7.312|1587.684833333333|17499.95|19052.217999999997|
+|RB-19360|18|4.448|839.8521666666667|13999.96|15117.339|
+|TA-21385|10|7.04|1459.562|11199.968|14595.619999999999|
+|HL-15040|11|6.63|1170.2998181818182|10499.97|12873.297999999999|
 
 
 
