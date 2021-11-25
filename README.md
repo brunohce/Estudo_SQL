@@ -407,6 +407,9 @@ from sales group by customer_id order by 6 desc limit 5
 
 #### HAVING
 
+HAVING é usada para colunas agregadas e WHERE em colunas não agregadas.
+
+
 Contar número de clientes por cidade e região e selecionar somente aquelas com mais de 10 clientes
 ```
 select city, region, count(distinct customer_id) as "Customer Count" from customer c group by city, region having count(3) > 10 order by 3 desc 
