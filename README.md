@@ -149,6 +149,7 @@ Selecionar todos os pedidos com valor entre 100 e 500<br/>
 ```
 select * from sales where sales between 100 and 500
 ```
+
 |order_line|order_id|order_date|ship_date|ship_mode|customer_id|product_id|sales|quantity|discount|profit|
 |----------|--------|----------|---------|---------|-----------|----------|-----|--------|--------|------|
 |1|CA-2016-152156|2016-11-08|2016-11-11|Second Class|CG-12520|FUR-BO-10001798|261.96|2|0.0|41.9136|
