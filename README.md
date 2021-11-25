@@ -45,7 +45,7 @@ alter table science_class rename column name to student_name;
 
 #  Utilizando db Supermart com tabelas customer, sales e products.
 
-#### Selecionar clientes por localidade usando WHERE e IN
+#### WHERE e IN
 ```
 select * from customer where state in ('California', 'New York');
 ```
@@ -60,7 +60,7 @@ select * from customer where city in ('Seattle', 'New York City', 'Fresno', 'Chi
 |.
 |.
 
-#### Selecionar clientes por idade usando WHERE e BETWEEN e NOT
+#### WHERE e BETWEEN e NOT
 
 Idade entre 20 e 50<br/>
 ```
@@ -86,7 +86,7 @@ select * from customer where age not between 20 and 30  order by age asc ;
 |.
 |.
 
-#### Usando wildcards
+#### Wildcards
 _  Representa um caractere<br/>
 % Representa zero ou mais caractereres
 
@@ -170,7 +170,7 @@ select * from customer where customer_name like '% ____';
 |.
 |.
 
-#### Ordenamento
+#### ORDER
 
 Pode ser feito ordem ascendente (ASC) ou descendente (desc) e utilizando um ou mais parâmetros<br/>
 
@@ -192,7 +192,7 @@ select * from customer where state = 'Florida'  order by 2 asc, 3 asc, 4 desc
 |.
 |.
 
-#### Usando ORDER e LIMIT
+#### ORDER e LIMIT
 
 O limit define quantas linhas vão ser retornadas. No exemplo usei a coluna age para ordenar. Os clientes com menores idades serão selecionados se usar a ordem asc. Os clientes com maiores idades serão selecionados se usar a ordem desc.
 ```
@@ -223,7 +223,7 @@ select * from sales where discount > 0 order by discount desc limit 3
 |76|US-2017-118038|2017-12-09|2017-12-11|First Class|KB-16600|OFF-BI-10004182|1.248|3|0.8|-1.9344|
 
 
-#### Usando COUNT e AS
+#### COUNT e AS
 
 AS é o nome que vai ser dado para a coluna ou tabela<br/>
 Para contar o número de produtos vendidos e 
@@ -255,7 +255,7 @@ select customer_id , count(distinct order_id) as "Number of Sales by Customer" f
 |CK-12205|13|
 
 
-#### Usando SUM
+#### SUM
 
 Para calcular o lucro total
 ```
@@ -282,7 +282,7 @@ select  product_id, sum(quantity) as "Total Quantity" from sales where product_i
 |----------|--------------|
 |FUR-CH-10000454|51|
 
-#### Usando AVG
+#### AVG
 
 Para calcular um valor médio
 ```
@@ -311,6 +311,24 @@ select avg(sales * 0.10) as "Average Comission Value" from sales
 |22.985800083049867|
 
 
+#### MAX e MIN
+
+Para encontrar o valor da menor venda do mês de Junho de 2015
+```
+select min(sales) as "Minimum Sales Value from June 2015" from sales where order_date between '2015-06-01' and '2015-06-30'
+```
+|Minimum Sales Value from June 2015|
+|----------------------------------|
+|0.984|
+
+Para encontrar o valor da maior venda do mês de Junho de 2015
+
+```
+select max(sales) as "Maximum Sales Value from June 2015" from sales where order_date between '2015-06-01' and '2015-06-30'
+```
+|Maximum Sales Value from June 2015|
+|----------------------------------|
+|3050.376|
 
 
 
