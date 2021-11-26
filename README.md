@@ -486,3 +486,11 @@ select count(case when age<=21 then 'Young' else null end) as "Young",
 	
 </details>
 
+	
+## SQL Avançado
+<details>
+	<summary>Utilizando db Supermart com tabelas customer, sales e products.</summary>
+
+	
+	
+</details>
