@@ -438,15 +438,16 @@ min(sales) as "Minimum Sales Value", avg(sales) as "Average Sales Value", max(sa
 |----------------|--------------|----------------|-------------------|-------------------|-------------------|
 |2297200.860299955|37873|5009|0.444|229.8580008304938|22638.48|
 
-Listar produtos com mais de 10 itens vendidos
+Listar produtos com menos de 10 itens vendidos em ordem crescente
 ```
-select product_id, sum(quantity) as "By Product Sales Quantity" from sales group by product_id having count(quantity) > 10 order by 2 desc
+select product_id, sum(quantity) as "By Product Sales Quantity" from sales group by product_id having sum(quantity) < 10 order by 2 asc
 ```
 
 |product_id|By Product Sales Quantity|
 |----------|-------------------------|
-|OFF-PA-10002377|14|
-|FUR-CH-10003774|14|
-|OFF-ST-10001490|13|
+|OFF-PA-10000048|1|
+|TEC-MA-10003493|1|
+|FUR-BO-10002206|1|
+
 |.
 |.
