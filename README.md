@@ -451,3 +451,24 @@ select product_id, sum(quantity) as "By Product Sales Quantity" from sales group
 
 |.
 |.
+
+#### CASE WHEN
+
+Funciona basicamente como o IF e ELSE.
+Para classificar categoricamente a idade dos clientes
+```
+select customer_id, customer_name, age , case 
+			when age<21 then 'Young'	
+			when age>60 then 'Elderly' 
+			else 'Adult'	
+		end as Age_category	from customer;
+```
+
+|customer_id|customer_name|age|age_category|
+|-----------|-------------|---|------------|
+|CG-12520|Claire Gute|67|Elderly|
+|DV-13045|Darrin Van Huff|31|Adult|
+|SO-20335|Sean O'Donnell|65|Elderly|
+|BH-11710|Brosina Hoffman|20|Young|
+|.
+
