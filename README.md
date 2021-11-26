@@ -1,6 +1,6 @@
 # Estudo SQL utilizando PostgreSQL
 
-## Comandos básicos SQL
+## SQL básico
 <details>
 <summary>Alguns comandos básicos que estou rodando no estudo de SQL utilizando tabelas criadas manualmente</summary>
 
@@ -43,7 +43,9 @@ alter table science_class rename column name to student_name;
 ```
 </details>
 
-#  Utilizando db Supermart com tabelas customer, sales e products.
+## SQL Intermediário
+<details>
+	<summary>Utilizando db Supermart com tabelas customer, sales e products.</summary>
 
 #### WHERE e IN
 ```
@@ -481,5 +483,5 @@ select count(case when age<=21 then 'Young' else null end) as "Young",
 |Young|Adult|Elderly|
 |-----|-----|-------|
 |66|546|181|
-
+	</details>
 
