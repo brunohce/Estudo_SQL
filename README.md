@@ -440,7 +440,7 @@ min(sales) as "Minimum Sales Value", avg(sales) as "Average Sales Value", max(sa
 
 Listar produtos com mais de 10 itens vendidos
 ```
-select product_id, count(quantity) as "By Product Sales Quantity" from sales group by product_id having count(quantity) > 10 order by 2 desc
+select product_id, sum(quantity) as "By Product Sales Quantity" from sales group by product_id having count(quantity) > 10 order by 2 desc
 ```
 
 |product_id|By Product Sales Quantity|
