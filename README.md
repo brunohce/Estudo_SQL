@@ -448,7 +448,6 @@ select product_id, sum(quantity) as "By Product Sales Quantity" from sales group
 |OFF-PA-10000048|1|
 |TEC-MA-10003493|1|
 |FUR-BO-10002206|1|
-
 |.
 |.
 
@@ -471,4 +470,16 @@ select customer_id, customer_name, age , case
 |SO-20335|Sean O'Donnell|65|Elderly|
 |BH-11710|Brosina Hoffman|20|Young|
 |.
+
+Dá para contar o número de clientes em cada categoria
+```
+select count(case when age<=21 then 'Young' else null end) as "Young",
+	   count(case when age between 22 and 59 then 'Adult' else null end) as "Adult",
+	   count(case when age>=60 then 'Elderly' else null end) as "Elderly"
+	  from customer;
+```
+|Young|Adult|Elderly|
+|-----|-----|-------|
+|66|546|181|
+
 
