@@ -31,7 +31,8 @@ Selecionar alunos com nota maior que 90 usando where:
 ```
 select * from science_class where science_marks>90;
 ```
-    |enrollment_no|name|science_marks|
+	
+|enrollment_no|name|science_marks|
 |-------------|----|-------------|
 |2|Bruno|100|
 |4|Daniela|95|
