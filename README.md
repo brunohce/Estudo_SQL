@@ -488,8 +488,7 @@ select count(case when age<=21 then 'Young' else null end) as "Young",
 
 	
 ## SQL Avançado
-<details>
-	<summary>Utilizando db Supermart com tabelas customer, sales e products.</summary>
+<summary>Utilizando db Supermart com tabelas customer, sales e products.</summary>
 
 
 <br/>	
@@ -522,3 +521,9 @@ select distinct customer_name from customer_20_60 c inner join sales_2015 s on c
 |.
 |.
 
+Encontrar clientes cadastrados que mais gastaram em $
+
+```
+select distinct customer_name, sum(sales) as "Total Money Spent" from customer_20_60 c 
+inner join sales_2015 s on c.customer_id = s.customer_id group by customer_name order by 2 desc
+```
