@@ -41,7 +41,7 @@ Selecionar somente o nome dos alunos com nota maior que 90 usando where:
 ```
 select name from science_class where science_marks>90;
 ```
-  |name|
+|name|
 |----|
 |Bruno|
 |Daniela|
@@ -53,7 +53,7 @@ select name from science_class where science_marks>90;
 update science_class set  science_marks = 110 WHERE name = 'Bruno';
   select * from science_class
 ```
-  |enrollment_no|name|science_marks|
+|enrollment_no|name|science_marks|
 |-------------|----|-------------|
 |1|Ana|90|
 |3|Carlos|84|
@@ -69,7 +69,7 @@ delete from science_class where name = 'Evandro';
 ```
 alter table science_class rename column name to student_name;
 ```
-  |enrollment_no|student_name|science_marks|
+|enrollment_no|student_name|science_marks|
 |-------------|------------|-------------|
 |1|Ana|90|
 |3|Carlos|84|
