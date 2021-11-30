@@ -544,6 +544,24 @@ select s.customer_id, c.customer_name, c.age, s.order_line, s.product_id , s.sal
 inner join customer_20_60 c on s.customer_id = c.customer_id  
 ```
 
-
-
+|customer_id|customer_name|age|order_line|product_id|sales|
+|-----------|-------------|---|----------|----------|-----|
+|HP-14815|Harold Pawlan|20|15|OFF-AP-10002311|68.81|
+|HP-14815|Harold Pawlan|20|16|OFF-BI-10000756|2.544|
+|EB-13870|Emily Burns|34|25|FUR-TA-10000577|1044.63|
+|.
+|.
+	
+Join múltiplo selecionando nome e idade do cliente (tabela customer), nome do produto (tabela product), e valor e data da venda (tabela sales)
+```
+select c.customer_name, c.age, p.product_name ,  s.sales, s.order_date  from sales_2015 s 
+inner join customer_20_60 c on s.customer_id = c.customer_id inner join product p on s.product_id = p.product_id order by s.order_date desc
+```
+|customer_name|age|product_name|sales|order_date|
+|-------------|---|------------|-----|----------|
+|Eric Murdock|46|Lenovo 17-Key USB Numeric Keypad|54.384|2015-12-28|
+|Richard Eichhorn|30|Cisco SPA 502G IP Phone|239.9|2015-12-27|
+|Arthur Gainer|56|Avery 497|21.56|2015-12-27|
+|.
+|.
 </details>
