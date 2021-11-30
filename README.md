@@ -20,7 +20,7 @@ Selecionar todas as colunas usando o *:
 ```
 select * from science_class;
 ```
-  |enrollment_no|name|science_marks|
+|enrollment_no|name|science_marks|
 |-------------|----|-------------|
 |1|Ana|90|
 |2|Bruno|100|
