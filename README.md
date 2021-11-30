@@ -488,7 +488,9 @@ select count(case when age<=21 then 'Young' else null end) as "Young",
 
 	
 ## SQL Avançado
-<summary>Utilizando db Supermart com tabelas customer, sales e products.</summary>
+</details>
+	<summary>Utilizando db Supermart com tabelas customer, sales e products. </summary>
+
 
 
 <br/>	
@@ -535,3 +537,13 @@ inner join sales_2015 s on c.customer_id = s.customer_id group by customer_name 
 |Natalie Webber|5511.316|
 |.
 |.
+
+Selecionar vendas por cliente contendo ID, nome e idade do cliente, e ordem, id e valor do pedido
+```
+select s.customer_id, c.customer_name, c.age, s.order_line, s.product_id , s.sales  from sales_2015 s 
+inner join customer_20_60 c on s.customer_id = c.customer_id  
+```
+
+
+
+</details>
