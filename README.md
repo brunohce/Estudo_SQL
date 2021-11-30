@@ -494,6 +494,7 @@ select count(case when age<=21 then 'Young' else null end) as "Young",
 
 <br/>	
 Criando tabelas com registros exclusivos
+	
 ```
 /*Creating sales table of year 2015*/
 
@@ -505,5 +506,19 @@ select count(distinct customer_id) from sales_2015;--578
 create table customer_20_60 as select * from customer where age between 20 and 60;
 select count (*) from customer_20_60;--597
 ```
+
+#### Inner Join
+Selecionar todos os clientes em ambas tabelas
+
+```
+select distinct customer_name from customer_20_60 c inner join sales_2015 s on c.customer_id = s.customer_id order by customer_name  
+```
 	
-</details>
+|customer_name|
+|-------------|
+|Aaron Hawkins|
+|Adam Bellavance|
+|Adam Hart|
+|.
+|.
+
