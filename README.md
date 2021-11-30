@@ -521,9 +521,17 @@ select distinct customer_name from customer_20_60 c inner join sales_2015 s on c
 |.
 |.
 
-Encontrar clientes cadastrados que mais gastaram em $
+Encontrar clientes cadastrados que mais gastaram $ 
 
 ```
-select distinct customer_name, sum(sales) as "Total Money Spent" from customer_20_60 c 
+select customer_name, sum(sales) as "$ Spent" from customer_20_60 c 
 inner join sales_2015 s on c.customer_id = s.customer_id group by customer_name order by 2 desc
 ```
+
+|customer_name|$ Spent|
+|-------------|-------|
+|Peter Fuller|9022.323999999999|
+|Fred Hopkins|6056.089999999999|
+|Natalie Webber|5511.316|
+|.
+|.
