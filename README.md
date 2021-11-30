@@ -615,4 +615,20 @@ select s.customer_id , c.customer_name, c.age, p.product_name ,  s.sales, s.orde
 |HP-14815|Harold Pawlan|20|Holmes Replacement Filter for HEPA Air Cleaner  Very Large Room  HEPA Filter|68.81|2015-11-22|
 |.
 |.
+        
+
+#### RIGHT JOIN 
+
+Selecionar todos os clientes mesmo que não tenha venda
+```
+select s.order_line,s.product_id,c.customer_id ,s.sales ,c.customer_name , c.age 
+	from sales_2015 s right join customer_20_60 c on s.customer_id = c.customer_id  order by customer_id
+```
+	
+|order_line|product_id|customer_id|sales|customer_name|age|
+|----------|----------|-----------|-----|-------------|---|
+|1979|OFF-AR-10000127|AA-10375|5.248|Allen Armold|22|
+|||AA-10480||Andrew Allen|50|
+|8009|OFF-PA-10000474|AA-10645|106.32|Anna Andreadi|32|
+
 </details>
