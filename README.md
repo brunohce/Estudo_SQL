@@ -20,18 +20,45 @@ Selecionar todas as colunas usando o *:
 ```
 select * from science_class;
 ```
+  |enrollment_no|name|science_marks|
+|-------------|----|-------------|
+|1|Ana|90|
+|2|Bruno|100|
+|3|Carlos|84|
+|4|Daniela|95|
+
 Selecionar alunos com nota maior que 90 usando where:
 ```
 select * from science_class where science_marks>90;
 ```
+    |enrollment_no|name|science_marks|
+|-------------|----|-------------|
+|2|Bruno|100|
+|4|Daniela|95|
+  
 Selecionar somente o nome dos alunos com nota maior que 90 usando where:
 ```
 select name from science_class where science_marks>90;
 ```
+  |name|
+|----|
+|Bruno|
+|Daniela|
+
+
+
 #### Alterar dados
 ```
 update science_class set  science_marks = 110 WHERE name = 'Bruno';
+  select * from science_class
 ```
+  |enrollment_no|name|science_marks|
+|-------------|----|-------------|
+|1|Ana|90|
+|3|Carlos|84|
+|4|Daniela|95|
+|2|Bruno|110|
+
 #### Deletar linhas
 ```
 insert into science_class values (5, 'Evandro', 30);
@@ -41,6 +68,13 @@ delete from science_class where name = 'Evandro';
 ```
 alter table science_class rename column name to student_name;
 ```
+  |enrollment_no|student_name|science_marks|
+|-------------|------------|-------------|
+|1|Ana|90|
+|3|Carlos|84|
+|4|Daniela|95|
+|2|Bruno|110|
+
 </details>
 
 ## SQL Intermediário
