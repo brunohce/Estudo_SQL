@@ -564,4 +564,20 @@ inner join customer_20_60 c on s.customer_id = c.customer_id inner join product 
 |Arthur Gainer|56|Avery 497|21.56|2015-12-27|
 |.
 |.
+	
+	
+#### LEFT JOIN
+
+Selecionar todas as vendas independente de ter informação da customer table
+```	
+select s.customer_id , c.customer_name, c.age, p.product_name ,  s.sales, s.order_date  from sales_2015 s  left join customer_20_60 c on s.customer_id = c.customer_id 		inner join product p on s.product_id = p.product_id 
+```
+
+|customer_id|customer_name|age|product_name|sales|order_date|
+|-----------|-------------|---|------------|-----|----------|
+|SO-20335|||Bretford CR4500 Series Slim Rectangular Table|957.5775|2015-10-11|
+|SO-20335|||Eldon Fold N Roll Cart System|22.368|2015-10-11|
+|HP-14815|Harold Pawlan|20|Holmes Replacement Filter for HEPA Air Cleaner  Very Large Room  HEPA Filter|68.81|2015-11-22|
+|.
+|.
 </details>
