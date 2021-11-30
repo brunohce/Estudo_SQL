@@ -492,8 +492,8 @@ select count(case when age<=21 then 'Young' else null end) as "Young",
 	<summary>Utilizando db Supermart com tabelas customer, sales e products.</summary>
 
 
-	
-Criando tabelas
+<br/>	
+Criando tabelas com registros exclusivos
 ```
 /*Creating sales table of year 2015*/
 
