@@ -83,6 +83,9 @@ alter table science_class rename column name to student_name;
 	<summary>Utilizando db Supermart com tabelas customer, sales e products.</summary>
 
 #### WHERE e IN
+WHERE é uma clásula que define um critério de filtragem de uma coluna de dados. Já o IN encontrará todos os valores existentes em um conjunto de candidatos.
+
+
 ```
 select * from customer where state in ('California', 'New York');
 ```
@@ -98,6 +101,8 @@ select * from customer where city in ('Seattle', 'New York City', 'Fresno', 'Chi
 |.
 
 #### WHERE e BETWEEN e NOT
+
+BETWEEN encontrará todos os valores dentro de um intervalo. NOT é a negação de uma outra cláusula, podendo ser BETWEEN ou outras.
 
 Idade entre 20 e 50<br/>
 ```
@@ -124,6 +129,9 @@ select * from customer where age not between 20 and 30  order by age asc ;
 |.
 
 #### Wildcards
+Wildcards são utilizados para substituir caracteres em uma string, sendo que:
+	
+	
 _  Representa um caractere<br/>
 % Representa zero ou mais caractereres
 
