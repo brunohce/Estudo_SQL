@@ -548,7 +548,7 @@ select count (*) from customer_20_60;--597
 ```
 
 #### Inner Join
-Selecionar todos os clientes em ambas tabelas
+Selecionar os clientes que estão em ambas tabelas. Tem de estar tanto na customer quanto sales.
 
 ```
 select distinct customer_name from customer_20_60 c inner join sales_2015 s on c.customer_id = s.customer_id order by customer_name  
