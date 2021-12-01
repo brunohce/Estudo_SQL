@@ -650,5 +650,31 @@ select s.order_line,s.product_id,c.customer_id ,s.sales ,c.customer_name , c.age
 |510|OFF-BI-10003527||6354.95|||
 |.
 |.
+	
+#### CROSS JOIN
+	
+Basicamente faz a combinação de todos as linhas de uma tabela com todos os valores de outra tabela
+
+```
+create table letter (letter "varchar");
+insert into letter values ('a'),('b'),('c');
+select * from letter;
+create table number (number int);
+insert into number values (1),(2),(3);
+select * from letter;
+select letter.letter, number.number from letter, number;
+```
+	
+|letter|number|
+|------|------|
+|a|1|
+|b|1|
+|c|1|
+|a|2|
+|b|2|
+|c|2|
+|a|3|
+|b|3|
+|c|3|
 
 </details>
