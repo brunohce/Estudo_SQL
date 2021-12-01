@@ -638,5 +638,20 @@ select s.order_line,s.product_id,c.customer_id ,s.sales ,c.customer_name , c.age
 |1979|OFF-AR-10000127|AA-10375|5.248|Allen Armold|22|
 |||AA-10480||Andrew Allen|50|
 |8009|OFF-PA-10000474|AA-10645|106.32|Anna Andreadi|32|
+	
+#### FULL JOIN
+```	
+Seleciona registros das duas tabelas, aparecendo registros sem vendas ou sem dados do cliente
+select s.order_line,s.product_id,c.customer_id ,s.sales ,c.customer_name , c.age 
+	from sales_2015 s full join customer_20_60 c on s.customer_id = c.customer_id order by sales desc
+```	
+	
+|order_line|product_id|customer_id|sales|customer_name|age|
+|----------|----------|-----------|-----|-------------|---|
+|||AR-10570||Anemone Ratner|36|
+|||VM-21835||Vivian Mathis|60|
+|510|OFF-BI-10003527||6354.95|||
+|.
+|.
 
 </details>
