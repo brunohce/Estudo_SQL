@@ -636,8 +636,9 @@ select s.order_line,s.product_id,c.customer_id ,s.sales ,c.customer_name , c.age
 |8009|OFF-PA-10000474|AA-10645|106.32|Anna Andreadi|32|
 	
 #### FULL JOIN
-```	
+	
 Seleciona registros das duas tabelas, aparecendo registros sem vendas ou sem dados do cliente
+```
 select s.order_line,s.product_id,c.customer_id ,s.sales ,c.customer_name , c.age 
 	from sales_2015 s full join customer_20_60 c on s.customer_id = c.customer_id order by sales desc
 ```	
