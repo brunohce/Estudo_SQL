@@ -676,5 +676,25 @@ select letter.letter, number.number from letter, number;
 |a|3|
 |b|3|
 |c|3|
+	
+####INTERSECT
+	
+Para selecionar os customer_id que estão presentes na tabela de vendas de 2015 e no banco de clientes.
+INTERSECT remove duplicatas e INTERSECT ALL mantém duplicatas. O mesmo conceito vale para UNION e EXCEPT
+```	
+select customer_id from sales_2015 s 
+intersect
+select customer_id from customer_20_60 c 
+```
+
+|customer_id|
+|-----------|
+|JP-15520|
+|CM-11815|
+|JD-16150|
+|.
+	
+####UNION
+
 
 </details>
