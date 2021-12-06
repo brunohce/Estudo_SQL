@@ -727,4 +727,21 @@ select customer_id from customer_20_60 c
 |TP-21130|
 |AG-10390|
 |.
+	
+#### EXERCÍCIOS 
+	
+Encontrar o total de vendas por estado das tabelas sales_2015 e customer_20_60
+No caso usei a função having para excluir as linhas nulas e ordenei do maior para o menor.
+```	
+select c.state, sum(s.sales) from customer_20_60 c left join sales_2015 s 
+on c.customer_id = s.customer_id  group by state having sum(s.sales) > 0 order by sum desc
+```
+	
+|state|sum|
+|-----|---|
+|California|72712.49479999999|
+|Pennsylvania|36239.77419999999|
+|New York|29823.967599999993|
+|.
+	
 </details>
