@@ -760,9 +760,9 @@ from product p left join sales_2015 s on p.product_id =s.product_id group by p.p
 	
 #### SUBQUERY
 
-É uma subconsulta dentro de outra consulta. Pode ser usada para fazer uma consulta direta evitando salvar tabelas e uso de joins.
+É uma subconsulta dentro de outra consulta dentro do WHERE, FROM ou SELECT. Pode ser usada para fazer uma consulta direta evitando salvar tabelas e uso de joins.
 
-Para retornar as vendas de clientes com mais de 60 anos.
+Para retornar as vendas de clientes com mais de 60 anos. (WHERE)
 ```
 select * from sales where customer_id in 
 (select distinct customer_id from customer c where age > 60)
@@ -790,7 +790,7 @@ where s.customer_id in (select distinct customer_id from customer c where age > 
 |CA-2014-143336|Zuschuss Donatelli|Newell 341|8.56|2|
 |...
 
-Para retornar a quantidade de vendas por produto com o nome e categoria.
+Para retornar a quantidade de vendas por produto com o nome e categoria. (FROM)
 ```
 select p.product_id , p.product_name , p.category , s.quantity from product p 
 left join (select product_id,sum(quantity) as quantity from sales group by product_id) as s on p.product_id = s.product_id
