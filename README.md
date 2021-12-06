@@ -789,4 +789,17 @@ where s.customer_id in (select distinct customer_id from customer c where age > 
 |CA-2016-161389|Irene Maddox|Fellowes PB200 Plastic Comb Binding Machine|407.976|3|
 |CA-2014-143336|Zuschuss Donatelli|Newell 341|8.56|2|
 |...
+
+Para retornar a quantidade de vendas por produto com o nome e categoria.
+```
+select p.product_id , p.product_name , p.category , s.quantity from product p 
+left join (select product_id,sum(quantity) as quantity from sales group by product_id) as s on p.product_id = s.product_id
+order by quantity desc
+```	
+|product_id|product_name|category|quantity|
+|----------|------------|--------|--------|
+|﻿FUR-BO-10001798|Bush Somerset Collection Bookcase|Furniture||
+|TEC-AC-10003832|Logitech P710e Mobile Speakerphone|Technology|75|
+|OFF-PA-10001970|Xerox 1881|Office Supplies|70|
+|...
 </details>
