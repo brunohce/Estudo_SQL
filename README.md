@@ -744,4 +744,17 @@ on c.customer_id = s.customer_id  group by state having sum(s.sales) > 0 order b
 |New York|29823.967599999993|
 |.
 	
+Retornar uma tabela com o ID e nome do produto, categoria, total de vendas e quantidade de itens.
+
+```
+select p.product_id , p.product_name , p.category , sum(sales) as "Total sales", sum(quantity) as "Total #" 
+from product p left join sales_2015 s on p.product_id =s.product_id group by p.product_id 
+```
+	
+|product_id|product_name|category|Total sales|Total #|
+|----------|------------|--------|-----------|-------|
+|OFF-FA-10000304|Advantus Push Pins|Office Supplies|8.72|5|
+|OFF-PA-10003656|Xerox 1935|Office Supplies|184.66|7|
+|FUR-TA-10001932|Chromcraft 48 x 96 Racetrack Double Pedestal Table|Furniture|||
+|.
 </details>
