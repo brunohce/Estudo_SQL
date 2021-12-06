@@ -802,4 +802,16 @@ order by quantity desc
 |TEC-AC-10003832|Logitech P710e Mobile Speakerphone|Technology|75|
 |OFF-PA-10001970|Xerox 1881|Office Supplies|70|
 |...
+	
+Para retornar a id e nome do cliente e ordem do pedido. Subquery está dentro do select e funciona como um left join.
+```	
+select customer_id, order_line, (select customer_name from customer c where c.customer_id=s.customer_id) 
+from sales s order by customer_id 
+	```
+|customer_id|order_line|customer_name|
+|-----------|----------|-------------|
+|AA-10315|1160|Alex Avila|
+|AA-10315|5201|Alex Avila|
+|AA-10315|5200|Alex Avila|
+
 </details>
