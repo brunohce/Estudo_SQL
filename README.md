@@ -677,7 +677,7 @@ select letter.letter, number.number from letter, number;
 |b|3|
 |c|3|
 	
-####INTERSECT
+#### INTERSECT
 	
 Para selecionar os customer_id que estão presentes na tabela de vendas de 2015 e no banco de clientes.
 INTERSECT remove duplicatas e INTERSECT ALL mantém duplicatas. O mesmo conceito vale para UNION e EXCEPT
@@ -695,7 +695,7 @@ select customer_id from customer_20_60 c
 |JD-16150|
 |.
 	
-####EXCEPT
+#### EXCEPT
 
 Para selecionar os customer_id que estão presentes na tabela de vendas de 2015 mas que NÃO estão presentes no banco de dados de clientes
 ```
@@ -711,7 +711,7 @@ select customer_id from customer_20_60 c
 |AB-10105|
 |.
 
-####UNION
+#### UNION
 
 Para retornar TODAS as customer_id que estão presentes no sales_2015 E/OU customer_20_60.
 	
