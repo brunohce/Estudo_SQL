@@ -807,7 +807,7 @@ Para retornar a id e nome do cliente e ordem do pedido. Subquery está dentro do
 ```	
 select customer_id, order_line, (select customer_name from customer c where c.customer_id=s.customer_id) 
 from sales s order by customer_id 
-	```
+```
 |customer_id|order_line|customer_name|
 |-----------|----------|-------------|
 |AA-10315|1160|Alex Avila|
