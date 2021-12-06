@@ -95,8 +95,8 @@ select * from customer where city in ('Seattle', 'New York City', 'Fresno', 'Chi
 |IM-15070|Irene Maddox|Consumer|66|United States|Seattle|Washington|98103|West|
 |JM-15265|Janet Molinari|Corporate|23|United States|New York City|New York|10024|East|
 |HM-14980|Henry MacAllister|Consumer|35|United States|New York City|New York|10009|East|
-|.
-|.
+|...
+
 
 #### WHERE e BETWEEN e NOT
 
@@ -109,8 +109,8 @@ select * from customer where age between 20 and 50  order by age asc ;
 |BE-11335|Bill Eplett|Home Office|20|United States|Jackson|Michigan|49201|Central|
 |DK-13150|David Kendrick|Corporate|20|United States|Decatur|Illinois|62521|Central|
 |FP-14320|Frank Preis|Consumer|20|United States|Los Angeles|California|90008|West|
-|.
-|.
+|...
+
 
 Idade não está entre 20 e 30<br/>
 ```
@@ -121,8 +121,8 @@ select * from customer where age not between 20 and 30  order by age asc ;
 |CC-12610|Corey Catlett|Corporate|18|United States|Philadelphia|Pennsylvania|19134|East|
 |DM-13525|Don Miller|Corporate|18|United States|Houston|Texas|77070|Central|
 |CC-12220|Chris Cortes|Consumer|18|United States|La Porte|Indiana|46350|Central|
-|.
-|.
+|...
+
 
 #### Wildcards
 Wildcards são utilizados para substituir caracteres em uma string, sendo que:
@@ -141,8 +141,8 @@ select * from customer where customer_name like '_____ %' AND city like 'L%' ord
 |AB-10150|Aimee Bixby|Consumer|65|United States|Long Beach|New York|11561|East|
 |BE-11410|Bobby Elias|Consumer|54|United States|Lancaster|Ohio|43130|East|
 |BT-11440|Bobby Trafton|Consumer|20|United States|Littleton|Colorado|80122|West|
-|.
-|.
+|...
+
 
 
 Clientes que o primeiro nome tem cinco letras e a cidade não começa com A <br/>
@@ -154,8 +154,8 @@ select * from customer where customer_name like '_____ %' AND city not like 'A%'
 |CS-12250|Chris Selesnick|Corporate|59|United States|Bossier City|Louisiana|71111|South|
 |BD-11635|Brian Derr|Consumer|42|United States|Bowling Green|Kentucky|42104|South|
 |GT-14635|Grant Thornton|Corporate|19|United States|Burlington|North Carolina|27217|South|
-|.
-|.
+|...
+
 
 
 Clientes que o primeiro nome tem cinco letras, a cidade começa com L e são dos estados de Ohio e Colorado <br/>
@@ -182,8 +182,8 @@ select distinct customer_name, city, region from customer where region in('North
 |Gene McClure|Providence|East|
 |Toby Braunhardt|Washington|East|
 |Alejandro Ballentine|Lorain|East|
-|.
-|.
+|...
+
 
 
 Selecionar todos os pedidos com valor entre 100 e 500<br/>
@@ -196,8 +196,8 @@ select * from sales where sales between 100 and 500
 |1|CA-2016-152156|2016-11-08|2016-11-11|Second Class|CG-12520|FUR-BO-10001798|261.96|2|0.0|41.9136|
 |10|CA-2014-115812|2014-06-09|2014-06-14|Standard Class|BH-11710|OFF-AP-10002892|114.9|5|0.0|34.47|
 |14|CA-2016-161389|2016-12-05|2016-12-10|Standard Class|IM-15070|OFF-BI-10003656|407.976|3|0.2|132.5922|
-|.
-|.
+|...
+
 
 Selecionar todos os clientes que o último nome tem 4 caracteres<br/>
 ```
@@ -208,8 +208,8 @@ select * from customer where customer_name like '% ____';
 |CG-12520|Claire Gute|Consumer|67|United States|Henderson|Kentucky|42420|South|
 |DV-13045|Darrin Van Huff|Corporate|31|United States|Los Angeles|California|90036|West|
 |PK-19075|Pete Kriz|Consumer|46|United States|Madison|Wisconsin|53711|Central|
-|.
-|.
+|...
+
 
 #### ORDER
 
@@ -230,8 +230,8 @@ select * from customer where state = 'Florida'  order by 2 asc, 3 asc, 4 desc
 |AH-10195|Alan Haines|Corporate|67|United States|Tamarac|Florida|33319|South|
 |AS-10240|Alan Shonely|Consumer|68|United States|Tampa|Florida|33614|South|
 |AG-10525|Andy Gerbode|Corporate|69|United States|Saint Petersburg|Florida|33710|South|
-|.
-|.
+|...
+
 
 #### ORDER e LIMIT
 
@@ -429,8 +429,8 @@ select product_id, sum(quantity) as "Quantity Sold" from sales group by product_
 |TEC-AC-10003832|75|
 |OFF-PA-10001970|70|
 |OFF-BI-10001524|67|
-|.
-|.
+|...
+
 
 Encontrar os clientes que mais gastam (total de compras)
 ```
@@ -489,8 +489,8 @@ select product_id, sum(quantity) as "By Product Sales Quantity" from sales group
 |OFF-PA-10000048|1|
 |TEC-MA-10003493|1|
 |FUR-BO-10002206|1|
-|.
-|.
+|...
+
 
 #### CASE WHEN
 
@@ -510,7 +510,7 @@ select customer_id, customer_name, age , case
 |DV-13045|Darrin Van Huff|31|Adult|
 |SO-20335|Sean O'Donnell|65|Elderly|
 |BH-11710|Brosina Hoffman|20|Young|
-|.
+|...
 
 Dá para contar o número de clientes em cada categoria
 ```
@@ -559,8 +559,8 @@ select distinct customer_name from customer_20_60 c inner join sales_2015 s on c
 |Aaron Hawkins|
 |Adam Bellavance|
 |Adam Hart|
-|.
-|.
+|...
+
 
 Encontrar clientes cadastrados que mais gastaram $ 
 
@@ -574,8 +574,8 @@ inner join sales_2015 s on c.customer_id = s.customer_id group by customer_name 
 |Peter Fuller|9022.323999999999|
 |Fred Hopkins|6056.089999999999|
 |Natalie Webber|5511.316|
-|.
-|.
+|...
+
 
 Selecionar vendas por cliente contendo ID, nome e idade do cliente, e ordem, id e valor do pedido
 ```
@@ -588,8 +588,8 @@ inner join customer_20_60 c on s.customer_id = c.customer_id
 |HP-14815|Harold Pawlan|20|15|OFF-AP-10002311|68.81|
 |HP-14815|Harold Pawlan|20|16|OFF-BI-10000756|2.544|
 |EB-13870|Emily Burns|34|25|FUR-TA-10000577|1044.63|
-|.
-|.
+|...
+
 	
 Join múltiplo selecionando nome e idade do cliente (tabela customer), nome do produto (tabela product), e valor e data da venda (tabela sales)
 ```
@@ -601,8 +601,8 @@ inner join customer_20_60 c on s.customer_id = c.customer_id inner join product 
 |Eric Murdock|46|Lenovo 17-Key USB Numeric Keypad|54.384|2015-12-28|
 |Richard Eichhorn|30|Cisco SPA 502G IP Phone|239.9|2015-12-27|
 |Arthur Gainer|56|Avery 497|21.56|2015-12-27|
-|.
-|.
+|...
+
 	
 	
 #### LEFT JOIN
@@ -617,8 +617,8 @@ select s.customer_id , c.customer_name, c.age, p.product_name ,  s.sales, s.orde
 |SO-20335|||Bretford CR4500 Series Slim Rectangular Table|957.5775|2015-10-11|
 |SO-20335|||Eldon Fold N Roll Cart System|22.368|2015-10-11|
 |HP-14815|Harold Pawlan|20|Holmes Replacement Filter for HEPA Air Cleaner  Very Large Room  HEPA Filter|68.81|2015-11-22|
-|.
-|.
+|...
+
         
 
 #### RIGHT JOIN 
@@ -648,8 +648,8 @@ select s.order_line,s.product_id,c.customer_id ,s.sales ,c.customer_name , c.age
 |||AR-10570||Anemone Ratner|36|
 |||VM-21835||Vivian Mathis|60|
 |510|OFF-BI-10003527||6354.95|||
-|.
-|.
+|...
+
 	
 #### CROSS JOIN
 	
@@ -693,7 +693,7 @@ select customer_id from customer_20_60 c
 |JP-15520|
 |CM-11815|
 |JD-16150|
-|.
+|...
 	
 #### EXCEPT
 
@@ -709,7 +709,7 @@ select customer_id from customer_20_60 c
 |TP-21130|
 |JR-15670|
 |AB-10105|
-|.
+|...
 
 #### UNION
 
@@ -726,7 +726,7 @@ select customer_id from customer_20_60 c
 |AZ-10750|
 |TP-21130|
 |AG-10390|
-|.
+|...
 	
 #### EXERCÍCIOS 
 	
@@ -742,7 +742,7 @@ on c.customer_id = s.customer_id  group by state having sum(s.sales) > 0 order b
 |California|72712.49479999999|
 |Pennsylvania|36239.77419999999|
 |New York|29823.967599999993|
-|.
+|...
 	
 Retornar uma tabela com o ID e nome do produto, categoria, total de vendas e quantidade de itens.
 
@@ -756,7 +756,7 @@ from product p left join sales_2015 s on p.product_id =s.product_id group by p.p
 |OFF-FA-10000304|Advantus Push Pins|Office Supplies|8.72|5|
 |OFF-PA-10003656|Xerox 1935|Office Supplies|184.66|7|
 |FUR-TA-10001932|Chromcraft 48 x 96 Racetrack Double Pedestal Table|Furniture|||
-|.
+|...
 	
 #### SUBQUERY
 
@@ -772,7 +772,7 @@ select * from sales where customer_id in
 |CA-2016-152156|CG-12520|FUR-BO-10001798|261.96|2|
 |CA-2016-152156|CG-12520|FUR-CH-10000454|731.94|3|
 |US-2015-108966|SO-20335|FUR-TA-10000577|957.5775|5|
-|.
+|...
 
 	
 Aqui vou usar múltiplos joins e uma subquery para selecionar atributos das tabelas customer, product e sales de clientes com mais de 60 anos.
@@ -784,9 +784,9 @@ where s.customer_id in (select distinct customer_id from customer c where age > 
 	
 |order_id|customer_name|product_name|sales|quantity|
 |--------|-------------|------------|-----|--------|
-|.
+|...
 |US-2015-108966|Sean O'Donnell|Eldon Fold N Roll Cart System|22.368|2|
 |CA-2016-161389|Irene Maddox|Fellowes PB200 Plastic Comb Binding Machine|407.976|3|
 |CA-2014-143336|Zuschuss Donatelli|Newell 341|8.56|2|
-|.
+|...
 </details>
