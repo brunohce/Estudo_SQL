@@ -784,8 +784,9 @@ where s.customer_id in (select distinct customer_id from customer c where age > 
 	
 |order_id|customer_name|product_name|sales|quantity|
 |--------|-------------|------------|-----|--------|
+|.
 |US-2015-108966|Sean O'Donnell|Eldon Fold N Roll Cart System|22.368|2|
 |CA-2016-161389|Irene Maddox|Fellowes PB200 Plastic Comb Binding Machine|407.976|3|
 |CA-2014-143336|Zuschuss Donatelli|Newell 341|8.56|2|
-
+|.
 </details>
