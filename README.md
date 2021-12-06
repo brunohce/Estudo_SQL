@@ -757,4 +757,20 @@ from product p left join sales_2015 s on p.product_id =s.product_id group by p.p
 |OFF-PA-10003656|Xerox 1935|Office Supplies|184.66|7|
 |FUR-TA-10001932|Chromcraft 48 x 96 Racetrack Double Pedestal Table|Furniture|||
 |.
+	
+#### SUBQUERY
+
+É uma subconsulta dentro de outra consulta. Pode ser usada para fazer uma consulta direta evitando salvar tabelas e uso de joins.
+
+Para retornar as vendas de clientes com mais de 60 anos.
+```
+select * from sales where customer_id in 
+(select distinct customer_id from customer c where age > 60)
+```
+|order_id|customer_id|product_id|sales|quantity|
+|--------|-----------|----------|-----|--------|
+|CA-2016-152156|CG-12520|FUR-BO-10001798|261.96|2|
+|CA-2016-152156|CG-12520|FUR-CH-10000454|731.94|3|
+|US-2015-108966|SO-20335|FUR-TA-10000577|957.5775|5|
+|.
 </details>
