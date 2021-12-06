@@ -773,4 +773,19 @@ select * from sales where customer_id in
 |CA-2016-152156|CG-12520|FUR-CH-10000454|731.94|3|
 |US-2015-108966|SO-20335|FUR-TA-10000577|957.5775|5|
 |.
+
+	
+Aqui vou usar múltiplos joins e uma subquery para selecionar atributos das tabelas customer, product e sales de clientes com mais de 60 anos.
+```
+select order_id , customer_name ,  product_name , sales , quantity from sales s 
+left join customer c2 on s.customer_id = c2.customer_id left join product p on s.product_id = p.product_id 
+where s.customer_id in (select distinct customer_id from customer c where age > 60)
+```
+	
+|order_id|customer_name|product_name|sales|quantity|
+|--------|-------------|------------|-----|--------|
+|US-2015-108966|Sean O'Donnell|Eldon Fold N Roll Cart System|22.368|2|
+|CA-2016-161389|Irene Maddox|Fellowes PB200 Plastic Comb Binding Machine|407.976|3|
+|CA-2014-143336|Zuschuss Donatelli|Newell 341|8.56|2|
+
 </details>
