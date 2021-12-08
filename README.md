@@ -817,18 +817,34 @@ from sales s order by customer_id
 #### Exercício
 	
 Selecionar todas as colunas da tabela sales, nome e idade do cliente da tabela customer, e nome e categoria do produto da tabela products
+
+Dá pra usar join e subqueries
 ```	
-select s.order_line, s.order_id, s.order_date, s.ship_date, s.ship_mode, s.customer_id, c.customer_name, c.age,
-s.product_id  , p.product_name , p.category , s.sales , s.quantity, s.discount, s.profit from sales s 
+select c.customer_name , c.age , sp.* from customer as c right join 
+(select s.*, p.product_name , p.category from sales as s left join product as p on s.product_id = p.product_id ) as sp
+on c.customer_id = sp.customer_id 
+```
+
+|customer_name|age|order_line|order_id|order_date|ship_date|ship_mode|customer_id|product_id|sales|quantity|discount|profit|product_name|category|
+|-------------|---|----------|--------|----------|---------|---------|-----------|----------|-----|--------|--------|------|------------|--------|
+|Claire Gute|67|1|CA-2016-152156|2016-11-08|2016-11-11|Second Class|CG-12520|FUR-BO-10001798|261.96|2|0.0|41.9136|||
+|Claire Gute|67|2|CA-2016-152156|2016-11-08|2016-11-11|Second Class|CG-12520|FUR-CH-10000454|731.94|3|0.0|219.582|Hon Deluxe Fabric Upholstered Stacking Chairs  Rounded Back|Furniture|
+|Darrin Van Huff|31|3|CA-2016-138688|2016-06-12|2016-06-16|Second Class|DV-13045|OFF-LA-10000240|14.62|2|0.0|6.8714|Self-Adhesive Address Labels for Typewriters by Universal|Office Supplies|
+
+	
+Ou somente joins (o que acho mais fácil)
+
+```	
+select c.customer_name, c.age , s.* , p.product_name , p.category from sales s 
 full join customer c on s.customer_id = c.customer_id 
 full join product p on s.product_id = p.product_id; 
 ```
 
-|order_line|order_id|order_date|ship_date|ship_mode|customer_id|customer_name|age|product_id|product_name|category|sales|quantity|discount|profit|
-|----------|--------|----------|---------|---------|-----------|-------------|---|----------|------------|--------|-----|--------|--------|------|
-|1|CA-2016-152156|2016-11-08|2016-11-11|Second Class|CG-12520|Claire Gute|67|FUR-BO-10001798|||261.96|2|0.0|41.9136|
-|2|CA-2016-152156|2016-11-08|2016-11-11|Second Class|CG-12520|Claire Gute|67|FUR-CH-10000454|Hon Deluxe Fabric Upholstered Stacking Chairs  Rounded Back|Furniture|731.94|3|0.0|219.582|
-|3|CA-2016-138688|2016-06-12|2016-06-16|Second Class|DV-13045|Darrin Van Huff|31|OFF-LA-10000240|Self-Adhesive Address Labels for Typewriters by Universal|Office Supplies|14.62|2|0.0|6.8714|
+|customer_name|age|order_line|order_id|order_date|ship_date|ship_mode|customer_id|product_id|sales|quantity|discount|profit|product_name|category|
+|-------------|---|----------|--------|----------|---------|---------|-----------|----------|-----|--------|--------|------|------------|--------|
+|Claire Gute|67|1|CA-2016-152156|2016-11-08|2016-11-11|Second Class|CG-12520|FUR-BO-10001798|261.96|2|0.0|41.9136|||
+|Claire Gute|67|2|CA-2016-152156|2016-11-08|2016-11-11|Second Class|CG-12520|FUR-CH-10000454|731.94|3|0.0|219.582|Hon Deluxe Fabric Upholstered Stacking Chairs  Rounded Back|Furniture|
+|Darrin Van Huff|31|3|CA-2016-138688|2016-06-12|2016-06-16|Second Class|DV-13045|OFF-LA-10000240|14.62|2|0.0|6.8714|Self-Adhesive Address Labels for Typewriters by Universal|Office Supplies|
 
 
 </details>
