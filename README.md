@@ -836,8 +836,8 @@ Ou somente joins (o que acho mais fácil)
 
 ```	
 select c.customer_name, c.age , s.* , p.product_name , p.category from sales s 
-full join customer c on s.customer_id = c.customer_id 
-full join product p on s.product_id = p.product_id; 
+left join customer c on s.customer_id = c.customer_id 
+left join product p on s.product_id = p.product_id; 
 ```
 
 |customer_name|age|order_line|order_id|order_date|ship_date|ship_mode|customer_id|product_id|sales|quantity|discount|profit|product_name|category|
