@@ -1,8 +1,6 @@
 # Estudo SQL utilizando PostgreSQL
 
-## SQL básico
-<details>
-<summary>Alguns comandos básicos que estou rodando no estudo de SQL utilizando tabelas criadas manualmente</summary>
+## Alguns comandos básicos que estou rodando no estudo de SQL utilizando tabelas criadas manualmente
 
 #### Criar tabela
 
@@ -78,9 +76,7 @@ alter table science_class rename column name to student_name;
 
 </details>
 
-## SQL Intermediário
-<details>
-	<summary>Utilizando db Supermart com tabelas customer, sales e products.</summary>
+## Utilizando db Supermart com tabelas customer, sales e products.
 
 #### WHERE e IN
 
@@ -522,17 +518,8 @@ select count(case when age<=21 then 'Young' else null end) as "Young",
 |Young|Adult|Elderly|
 |-----|-----|-------|
 |66|546|181|
-	
-</details>
+		
 
-	
-## SQL Avançado
-<details>
-	<summary>Utilizando db Supermart com tabelas customer, sales e products. </summary>
-
-
-
-<br/>	
 Criando tabelas com registros exclusivos
 	
 ```
@@ -894,5 +881,3 @@ drop view daily_billing;
 |----------|----------|-----|--------|
 |7981|OFF-PA-10000174|16.448|0.2|
 
-	
-</details>
