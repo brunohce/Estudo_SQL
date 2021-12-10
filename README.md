@@ -846,5 +846,37 @@ left join product p on s.product_id = p.product_id;
 |Claire Gute|67|2|CA-2016-152156|2016-11-08|2016-11-11|Second Class|CG-12520|FUR-CH-10000454|731.94|3|0.0|219.582|Hon Deluxe Fabric Upholstered Stacking Chairs  Rounded Back|Furniture|
 |Darrin Van Huff|31|3|CA-2016-138688|2016-06-12|2016-06-16|Second Class|DV-13045|OFF-LA-10000240|14.62|2|0.0|6.8714|Self-Adhesive Address Labels for Typewriters by Universal|Office Supplies|
 
+#### VIEWS 
+	
+View é um resultado originado de uma consulta pré-definida. Essencialmente é um metadado que mapeia uma query para outra, por isto pode ser considerado como uma tabela virtual. 
+
+Para criar a view da mesma tabela anterior
+```	
+create view viewtest as select c.customer_name, c.age , s.* , p.product_name , p.category from sales s 
+left join customer c on s.customer_id = c.customer_id 
+left join product p on s.product_id = p.product_id;
+
+select * from viewtest;
+```
+	
+|customer_name|age|order_line|order_id|order_date|ship_date|ship_mode|customer_id|product_id|sales|quantity|discount|profit|product_name|category|
+|-------------|---|----------|--------|----------|---------|---------|-----------|----------|-----|--------|--------|------|------------|--------|
+|Claire Gute|67|1|CA-2016-152156|2016-11-08|2016-11-11|Second Class|CG-12520|FUR-BO-10001798|261.96|2|0.0|41.9136|||
+|Claire Gute|67|2|CA-2016-152156|2016-11-08|2016-11-11|Second Class|CG-12520|FUR-CH-10000454|731.94|3|0.0|219.582|Hon Deluxe Fabric Upholstered Stacking Chairs  Rounded Back|Furniture|
+|Darrin Van Huff|31|3|CA-2016-138688|2016-06-12|2016-06-16|Second Class|DV-13045|OFF-LA-10000240|14.62|2|0.0|6.8714|Self-Adhesive Address Labels for Typewriters by Universal|Office Supplies|
+
+Outro exemplo seria criar uma view para a equipe de logística com id do pedido e informações do endereço.
+```	
+create view logistics as select s.order_id , c.customer_name , c.city , c.state , c.country , c.postal_code 
+from sales s left join customer c on s.customer_id = c.customer_id order by s.order_line;
+
+select * from logistics
+```
+	
+|order_id|customer_name|city|state|country|postal_code|
+|--------|-------------|----|-----|-------|-----------|
+|CA-2016-152156|Claire Gute|Henderson|Kentucky|United States|42420|
+|CA-2016-152156|Claire Gute|Henderson|Kentucky|United States|42420|
+|CA-2016-138688|Darrin Van Huff|Los Angeles|California|United States|90036|
 
 </details>
