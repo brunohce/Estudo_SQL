@@ -536,7 +536,8 @@ select count (*) from customer_20_60;--597
 Selecionar os clientes que estão em ambas tabelas. Tem de estar tanto na customer quanto sales.
 
 ```
-select distinct customer_name from customer_20_60 c inner join sales_2015 s on c.customer_id = s.customer_id order by customer_name  
+select distinct customer_name from customer_20_60 c inner join sales_2015 s on c.customer_id = s.customer_id 
+order by customer_name  
 ```
 	
 |customer_name|
@@ -579,7 +580,8 @@ inner join customer_20_60 c on s.customer_id = c.customer_id
 Join múltiplo selecionando nome e idade do cliente (tabela customer), nome do produto (tabela product), e valor e data da venda (tabela sales)
 ```
 select c.customer_name, c.age, p.product_name ,  s.sales, s.order_date  from sales_2015 s 
-inner join customer_20_60 c on s.customer_id = c.customer_id inner join product p on s.product_id = p.product_id order by s.order_date desc
+inner join customer_20_60 c on s.customer_id = c.customer_id inner join product p on s.product_id = p.product_id
+order by s.order_date desc
 ```
 |customer_name|age|product_name|sales|order_date|
 |-------------|---|------------|-----|----------|
@@ -594,7 +596,9 @@ inner join customer_20_60 c on s.customer_id = c.customer_id inner join product 
 
 Selecionar todas as vendas independente de ter informação da customer table
 ```	
-select s.customer_id , c.customer_name, c.age, p.product_name ,  s.sales, s.order_date  from sales_2015 s  left join customer_20_60 c on s.customer_id = c.customer_id 		inner join product p on s.product_id = p.product_id 
+select s.customer_id , c.customer_name, c.age, p.product_name ,  s.sales, s.order_date  from sales_2015 s  
+left join customer_20_60 c on s.customer_id = c.customer_id 
+inner join product p on s.product_id = p.product_id 
 ```
 
 |customer_id|customer_name|age|product_name|sales|order_date|
@@ -925,7 +929,8 @@ select lower(customer_name) , length(customer_name) as "Name Size" from customer
 
 Usado para remover caracteres de uma string. Precisa determinar o char (no caso usei a letra 't' mas pode remover espaços, por exemplo), a direção (ambos lados, esquerda ou direita) e a string.)
 ```
-select ('t Bruno Evaldt t') , trim(both 't' from 't Bruno Evaldt t'),  trim(leading 't' from 't Bruno Evaldt t') ,  trim(trailing 't' from 't Bruno Evaldt t')
+select ('t Bruno Evaldt t') , trim(both 't' from 't Bruno Evaldt t'),  trim(leading 't' from 't Bruno Evaldt t') , 
+trim(trailing 't' from 't Bruno Evaldt t')
 ```
 
 |?column?|btrim|ltrim|rtrim|
@@ -1004,8 +1009,8 @@ from product p
 
 Decompor o product_id em três partes. O primeiro produto aparentemente tem um caractere a mais no começo que não consegui identificar, mas todo o restante está como deveria.
 ```
-select product_name,  product_id , substring(product_id for 3 ) as "CategoryCode" , substring(product_id from 5 for 2) as "SubcategoryCode" ,
-substring(product_id from 8) as "NameCode" from product p
+select product_name,  product_id , substring(product_id for 3 ) as "CategoryCode" , substring(product_id from 5 for 2) as "SubcategoryCode" 
+, substring(product_id from 8) as "NameCode" from product p
 ```
 
 |product_name|product_id|CategoryCode|SubcategoryCode|NameCode|
