@@ -976,3 +976,14 @@ left join customer c on s.customer_id = c.customer_id group by c.customer_name
 |Aaron Hawkins|FUR-CH-10002439, FUR-FU-10003691, OFF-AR-10003183, OFF-BI-10002353, OFF-BI-10004970, OFF-EN-10004773, OFF-LA-10003148, OFF-PA-10003063, OFF-ST-10000046, TEC-AC-10003614, TEC-PH-10003505|
 |Aaron Smayling|FUR-BO-10002613, FUR-TA-10001520, OFF-BI-10000474, OFF-BI-10002931, OFF-BI-10003694, OFF-PA-10002709, OFF-PA-10003729, OFF-ST-10000649, TEC-MA-10000488, TEC-MA-10002178|
 |...
+
+#### Exercícios
+
+Achar o comprimento máximo de caracteres em nomes de produtos
+
+
+Recuperar nome do produto, subcategoria, catoria e uma coluna com esses valores concatenados.
+
+Decompor o product_id em três partes
+
+Listar de forma agregada o nome dos produtos que a subcategoria é chairs ou tables
