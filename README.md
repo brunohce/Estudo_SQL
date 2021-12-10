@@ -951,11 +951,11 @@ from customer c
 
 Serve para extrair uma substring de uma string completa. Por exemplo, separar o customer_id em duas partes (letras e números).
 ```
-select customer_id , customer_name , substring(customer_id for 2) , 
+select customer_id , customer_name , substring(customer_id for 2) as cust_group , 
 substring(customer_id from 4 for 5) as cust_number from customer where substring(customer_id for 2) = 'AB'  
 ```
 
-|customer_id|customer_name|substring|cust_number|
+|customer_id|customer_name|cust_group|cust_number|
 |-----------|-------------|---------|-----------|
 |AB-10060|Adam Bellavance|AB|10060|
 |AB-10165|Alan Barnes|AB|10165|
