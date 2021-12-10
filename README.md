@@ -1055,3 +1055,48 @@ select age , power(age, 2) from customer c
 |31|961.0|
 |65|4225.0|
 |...
+
+#### Exercícios
+
+#### DATE, TIME, TIMESTAMP e AGE
+
+São funções pra recuperar a data ou hora atual ou ambas.
+```
+select current_date , current_time , current_timestamp 
+```
+
+|current_date|current_time|current_timestamp|
+|------------|------------|-----------------|
+|2021-12-10|15:56:20 -0300|2021-12-10 15:56:20.013 -0300|
+
+
+É possível realizar operações com a data e usar esse resultado junto com outras clásulas como WHERE. Por exemplo: retornar somente os pedidos feitos nos últimos 5 anos.
+```
+select * from sales where order_date > current_date - (365 * 5)
+```
+
+|order_line|order_id|order_date|ship_date|ship_mode|customer_id|product_id|sales|quantity|discount|profit|
+|----------|--------|----------|---------|---------|-----------|----------|-----|--------|--------|------|
+|13|CA-2017-114412|2017-04-15|2017-04-20|Standard Class|AA-10480|OFF-PA-10002365|15.552|3|0.2|5.4432|
+|24|US-2017-156909|2017-07-16|2017-07-18|Second Class|SF-20065|FUR-CH-10002774|71.372|2|0.3|-1.0196|
+|35|CA-2017-107727|2017-10-19|2017-10-23|Second Class|MA-17560|OFF-PA-10000249|29.472|3|0.2|9.9468|
+|...
+
+Com a função AGE é possível calcular o tempo entre dois eventos. Nesse caso calculado quanto tempo desde o início da colonização do estado do Espírito Santo.
+```
+select age(current_date ,'1535-05-23')
+```
+|age|
+|---|
+|486 years 6 mons 18 days|
+
+Para calcular quanto tempo levou para cada item ser enviado.
+```
+select order_id , product_id, age(ship_date, order_date) from sales
+```
+|order_id|product_id|age|
+|--------|----------|---|
+|CA-2016-152156|FUR-BO-10001798|3 days|
+|CA-2016-152156|FUR-CH-10000454|3 days|
+|CA-2016-138688|OFF-LA-10000240|4 days|
+|...
