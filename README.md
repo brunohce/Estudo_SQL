@@ -867,16 +867,17 @@ select * from viewtest;
 
 Outro exemplo seria criar uma view para a equipe de logística com id do pedido e informações do endereço.
 ```	
-create view logistics as select s.order_id , c.customer_name , c.city , c.state , c.country , c.postal_code 
+create view logistics as select s.order_line , s.order_id , c.customer_name , c.city , c.state , c.country , c.postal_code 
 from sales s left join customer c on s.customer_id = c.customer_id order by s.order_line;
 
 select * from logistics
+
 ```
 	
-|order_id|customer_name|city|state|country|postal_code|
-|--------|-------------|----|-----|-------|-----------|
-|CA-2016-152156|Claire Gute|Henderson|Kentucky|United States|42420|
-|CA-2016-152156|Claire Gute|Henderson|Kentucky|United States|42420|
-|CA-2016-138688|Darrin Van Huff|Los Angeles|California|United States|90036|
+|order_line|order_id|customer_name|city|state|country|postal_code|
+|----------|--------|-------------|----|-----|-------|-----------|
+|1|CA-2016-152156|Claire Gute|Henderson|Kentucky|United States|42420|
+|2|CA-2016-152156|Claire Gute|Henderson|Kentucky|United States|42420|
+|3|CA-2016-138688|Darrin Van Huff|Los Angeles|California|United States|90036|
 
 </details>
