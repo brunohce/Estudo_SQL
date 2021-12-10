@@ -47,7 +47,7 @@ select name from science_class where science_marks>90;
 #### Alterar dados
 ```
 update science_class set  science_marks = 110 WHERE name = 'Bruno';
-  select * from science_class
+select * from science_class;
 ```
 |enrollment_no|name|science_marks|
 |-------------|----|-------------|
@@ -128,7 +128,7 @@ _  Representa um caractere<br/>
 
 Clientes que o primeiro nome tem cinco letras e a cidade começa com L <br/>
 ```
-select * from customer where customer_name like '_____ %' AND city like 'L%' order by customer_name asc
+select * from customer where customer_name like '_____ %' AND city like 'L%' order by customer_name asc;
 ```
 |customer_id|customer_name|segment|age|country|city|state|postal_code|region|
 |-----------|-------------|-------|---|-------|----|-----|-----------|------|
@@ -169,7 +169,7 @@ city like 'L%' and state in ('Ohio', 'Colorado') order by customer_name asc;
 
 Selecionar clientes distintos de cidades que são da região norte e sul<br/>
 ```
-select distinct customer_name, city, region from customer where region in('North', 'East')
+select distinct customer_name, city, region from customer where region in('North', 'East');
 ```
 |customer_name|city|region|
 |-------------|----|------|
@@ -182,7 +182,7 @@ select distinct customer_name, city, region from customer where region in('North
 
 Selecionar todos os pedidos com valor entre 100 e 500<br/>
 ```
-select * from sales where sales between 100 and 500
+select * from sales where sales between 100 and 500;
 ```
 
 |order_line|order_id|order_date|ship_date|ship_mode|customer_id|product_id|sales|quantity|discount|profit|
