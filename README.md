@@ -931,3 +931,18 @@ select ('t Bruno Evaldt t') , trim(both 't' from 't Bruno Evaldt t'),  trim(lead
 |?column?|btrim|ltrim|rtrim|
 |--------|-----|-----|-----|
 |t Bruno Evaldt t| Bruno Evaldt | Bruno Evaldt t|t Bruno Evaldt |
+
+#### CONCATENATION
+
+Usada para contatenar duas ou mais strings em uma única coluna. Por exemplo, concatenar todos os dados do endereço do cliente.
+```
+select customer_name ,  postal_code || ', ' || city || ', ' || state ||', ' || country as "Address"
+from customer c 
+```
+
+|customer_name|Address|
+|-------------|-------|
+|Claire Gute|42420, Henderson, Kentucky, United States|
+|Darrin Van Huff|90036, Los Angeles, California, United States|
+|Sean O'Donnell|33311, Fort Lauderdale, Florida, United States|
+|...
