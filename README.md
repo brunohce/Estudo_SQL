@@ -1100,3 +1100,13 @@ select order_id , product_id, age(ship_date, order_date) from sales
 |CA-2016-152156|FUR-CH-10000454|3 days|
 |CA-2016-138688|OFF-LA-10000240|4 days|
 |...
+
+É possível extrair elementos da timestamp usando a função extract
+```
+select extract (day from current_timestamp) as day, extract (month from current_timestamp) as month, 
+extract (year from current_timestamp) as year , extract (doy from current_timestamp) as doy , 
+extract (week from current_timestamp) as week, extract (quarter from current_timestamp) as quarter
+```
+|day|month|year|doy|week|quarter|
+|---|-----|----|---|----|-------|
+|10|12|2021|344|49|4|
