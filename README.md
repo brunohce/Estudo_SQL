@@ -883,7 +883,7 @@ select * from logistics
 
 #### Exercício
 	
-Criar uma view com ordem, valor, desconto e product id da venda mais antiga, com o nome daily_billing.
+Criar uma view com ordem, valor, desconto e product id da venda mais antiga, com o nome daily_billing. Depois deletar a view.
 ```	
 create view daily_billing as select order_line , product_id , sales, discount from sales order by order_date asc limit 1;
 select * from daily_billing;
