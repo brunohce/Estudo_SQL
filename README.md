@@ -919,3 +919,15 @@ select lower(customer_name) , length(customer_name) as "Name Size" from customer
 |brosina hoffman|15|
 |alejandro grove|15|
 |...
+
+
+## TRIM
+
+Usado para remover caracteres de uma string. Precisa determinar o char (no caso usei a letra 't' mas pode remover espaços, por exemplo), a direção (ambos lados, esquerda ou direita) e a string.)
+```
+select ('t Bruno Evaldt t') , trim(both 't' from 't Bruno Evaldt t'),  trim(leading 't' from 't Bruno Evaldt t') ,  trim(trailing 't' from 't Bruno Evaldt t')
+```
+
+|?column?|btrim|ltrim|rtrim|
+|--------|-----|-----|-----|
+|t Bruno Evaldt t| Bruno Evaldt | Bruno Evaldt t|t Bruno Evaldt |
