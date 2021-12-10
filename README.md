@@ -890,3 +890,32 @@ Retorna o tamanho da string. Por exemplo para retornar o tamanho do nome dos cli
 ```
 select customer_name , length(customer_name) as "Name Size" from customer c where length(customer_name) >= 15
 ```
+|customer_name|Name Size|
+|-------------|---------|
+|Darrin Van Huff|15|
+|Brosina Hoffman|15|
+|Alejandro Grove|15|
+|...
+
+## UPPER/LOWER
+
+Muda o texto para caixa alta ou baixa
+```
+select upper(customer_name) , length(customer_name) as "Name Size" from customer c where length(customer_name) >= 15 
+```
+|upper|Name Size|
+|-----|---------|
+|DARRIN VAN HUFF|15|
+|BROSINA HOFFMAN|15|
+|ALEJANDRO GROVE|15|
+|...
+
+```
+select lower(customer_name) , length(customer_name) as "Name Size" from customer c where length(customer_name) >= 15 
+```
+|lower|Name Size|
+|-----|---------|
+|darrin van huff|15|
+|brosina hoffman|15|
+|alejandro grove|15|
+|...
