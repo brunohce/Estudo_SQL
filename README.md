@@ -1,7 +1,5 @@
 # Estudo SQL utilizando PostgreSQL
 
-## Alguns comandos básicos que estou rodando no estudo de SQL utilizando tabelas criadas manualmente
-
 #### Criar tabela
 
 Para criar uma tabela com o nome science_class com as colunas enrollment_no, name e science marks
