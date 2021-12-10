@@ -1042,3 +1042,16 @@ select avg(age) as "Average Customer Age", round(avg(age)), ceil(avg(age)), floo
 |Average Customer Age|round|ceil|floor|
 |--------------------|-----|----|-----|
 |44.4678436317780580|44|45|44|
+
+#### POWER 
+
+Eleva a potência N (no caso 2).
+```
+select age , power(age, 2) from customer c 
+```
+|age|power|
+|---|-----|
+|67|4489.0|
+|31|961.0|
+|65|4225.0|
+|...
