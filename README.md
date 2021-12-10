@@ -1031,3 +1031,14 @@ from product p where sub_category in ('Chairs','Tables') group by category , sub
 |--------|------------|--------------|
 |Furniture|Chairs|Hon Deluxe Fabric Upholstered Stacking Chairs  Rounded Back, Global Deluxe Stacking Chair  Gray, Global Fabric Managers Chair  Dark Gray...|
 |Furniture|Tables|Bretford CR4500 Series Slim Rectangular Table, Chromcraft Rectangular Conference Tables, Hon Racetrack Conference Tables...|
+
+#### ROUND, CEIL FLOOR
+
+ROUND é o arrendondamento normal, CEIL retorna o primeiro número inteiro maior que o input e FLOOR o primeiro número inteiro menor que o input.
+```
+select avg(age) as "Average Customer Age", round(avg(age)), ceil(avg(age)), floor(avg(age)) from customer c  
+```
+
+|Average Customer Age|round|ceil|floor|
+|--------------------|-----|----|-----|
+|44.4678436317780580|44|45|44|
