@@ -518,7 +518,7 @@ select count(case when age<=21 then 'Young' else null end) as "Young",
 |66|546|181|
 		
 
-Criando tabelas com registros exclusivos
+## Criando tabelas com registros exclusivos
 	
 ```
 /*Creating sales table of year 2015*/
