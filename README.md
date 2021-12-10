@@ -946,3 +946,18 @@ from customer c
 |Darrin Van Huff|90036, Los Angeles, California, United States|
 |Sean O'Donnell|33311, Fort Lauderdale, Florida, United States|
 |...
+
+#### SUBSTRING
+
+Serve para extrair uma substring de uma string completa. Por exemplo, separar o customer_id em duas partes (letras e números).
+```
+select customer_id , customer_name , substring(customer_id for 2) , 
+substring(customer_id from 4 for 5) as cust_number from customer where substring(customer_id for 2) = 'AB'  
+```
+
+|customer_id|customer_name|substring|cust_number|
+|-----------|-------------|---------|-----------|
+|AB-10060|Adam Bellavance|AB|10060|
+|AB-10165|Alan Barnes|AB|10165|
+|AB-10255|Alejandro Ballentine|AB|10255|
+|...
