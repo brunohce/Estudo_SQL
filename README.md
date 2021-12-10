@@ -879,5 +879,20 @@ select * from logistics
 |1|CA-2016-152156|Claire Gute|Henderson|Kentucky|United States|42420|
 |2|CA-2016-152156|Claire Gute|Henderson|Kentucky|United States|42420|
 |3|CA-2016-138688|Darrin Van Huff|Los Angeles|California|United States|90036|
+	
 
+#### Exercício
+	
+Criar uma view com ordem, valor, desconto e product id da venda mais antiga, com o nome daily_billing.
+```	
+create view daily_billing as select order_line , product_id , sales, discount from sales order by order_date asc limit 1;
+select * from daily_billing;
+drop view daily_billing;
+```
+	
+|order_line|product_id|sales|discount|
+|----------|----------|-----|--------|
+|7981|OFF-PA-10000174|16.448|0.2|
+
+	
 </details>
