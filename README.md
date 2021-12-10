@@ -884,7 +884,7 @@ drop view daily_billing;
 |----------|----------|-----|--------|
 |7981|OFF-PA-10000174|16.448|0.2|
 
-## Length
+#### Length
 
 Retorna o tamanho da string. Por exemplo para retornar o tamanho do nome dos clientes com tamanho igual ou maior que 15 chars.
 ```
@@ -897,7 +897,7 @@ select customer_name , length(customer_name) as "Name Size" from customer c wher
 |Alejandro Grove|15|
 |...
 
-## UPPER/LOWER
+#### UPPER/LOWER
 
 Muda o texto para caixa alta ou baixa
 ```
@@ -921,7 +921,7 @@ select lower(customer_name) , length(customer_name) as "Name Size" from customer
 |...
 
 
-## TRIM
+#### TRIM
 
 Usado para remover caracteres de uma string. Precisa determinar o char (no caso usei a letra 't' mas pode remover espaços, por exemplo), a direção (ambos lados, esquerda ou direita) e a string.)
 ```
