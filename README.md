@@ -979,11 +979,39 @@ left join customer c on s.customer_id = c.customer_id group by c.customer_name
 
 #### Exercícios
 
-Achar o comprimento máximo de caracteres em nomes de produtos
+Achar o comprimento máximo de caracteres em nomes de produtos. Primeiro a opção mais simples depois uma mais complexa (melhor fazer mais simples :)).
+```
+select length(product_name) from product p order by 1 desc limit 1
+OU
+select max(length) as length from (select product_name , length(product_name) from product p) as foo
+```
+|length|
+|------|
+|127|
 
+Recuperar nome do produto, subcategoria, categoria e uma coluna com esses valores concatenados.
+```
+select product_name , sub_category , category , product_name ||  ', ' || sub_category ||  ', ' || category as "Full Description"
+from product p 
+```
 
-Recuperar nome do produto, subcategoria, catoria e uma coluna com esses valores concatenados.
+|product_name|sub_category|category|Full Description|
+|------------|------------|--------|----------------|
+|Bush Somerset Collection Bookcase|Bookcases|Furniture|Bush Somerset Collection Bookcase, Bookcases, Furniture|
+|Hon Deluxe Fabric Upholstered Stacking Chairs  Rounded Back|Chairs|Furniture|Hon Deluxe Fabric Upholstered Stacking Chairs  Rounded Back, Chairs, Furniture|
+|Self-Adhesive Address Labels for Typewriters by Universal|Labels|Office Supplies|Self-Adhesive Address Labels for Typewriters by Universal, Labels, Office Supplies|
+|...
 
-Decompor o product_id em três partes
+Decompor o product_id em três partes. O primeiro produto aparentemente tem um caractere a mais no começo que não consegui identificar, mas todo o restante está como deveria.
+```
+select product_name,  product_id , substring(product_id for 3 ) as "CategoryCode" , substring(product_id from 5 for 2) as "SubcategoryCode" ,
+substring(product_id from 8) as "NameCode" from product p
+```
+
+|product_name|product_id|CategoryCode|SubcategoryCode|NameCode|
+|------------|----------|------------|---------------|--------|
+|Bush Somerset Collection Bookcase|﻿FUR-BO-10001798|﻿FU|-B|-10001798|
+|Hon Deluxe Fabric Upholstered Stacking Chairs  Rounded Back|FUR-CH-10000454|FUR|CH|10000454|
+|Self-Adhesive Address Labels for Typewriters by Universal|OFF-LA-10000240|OFF|LA|10000240|
 
 Listar de forma agregada o nome dos produtos que a subcategoria é chairs ou tables
