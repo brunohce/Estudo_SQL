@@ -798,6 +798,7 @@ from sales s order by customer_id
 |AA-10315|1160|Alex Avila|
 |AA-10315|5201|Alex Avila|
 |AA-10315|5200|Alex Avila|
+|...
 
 #### Exercício
 	
@@ -815,6 +816,7 @@ on c.customer_id = sp.customer_id
 |Claire Gute|67|1|CA-2016-152156|2016-11-08|2016-11-11|Second Class|CG-12520|FUR-BO-10001798|261.96|2|0.0|41.9136|||
 |Claire Gute|67|2|CA-2016-152156|2016-11-08|2016-11-11|Second Class|CG-12520|FUR-CH-10000454|731.94|3|0.0|219.582|Hon Deluxe Fabric Upholstered Stacking Chairs  Rounded Back|Furniture|
 |Darrin Van Huff|31|3|CA-2016-138688|2016-06-12|2016-06-16|Second Class|DV-13045|OFF-LA-10000240|14.62|2|0.0|6.8714|Self-Adhesive Address Labels for Typewriters by Universal|Office Supplies|
+|...
 
 	
 Ou somente joins (o que acho mais fácil)
@@ -830,6 +832,7 @@ left join product p on s.product_id = p.product_id;
 |Claire Gute|67|1|CA-2016-152156|2016-11-08|2016-11-11|Second Class|CG-12520|FUR-BO-10001798|261.96|2|0.0|41.9136|||
 |Claire Gute|67|2|CA-2016-152156|2016-11-08|2016-11-11|Second Class|CG-12520|FUR-CH-10000454|731.94|3|0.0|219.582|Hon Deluxe Fabric Upholstered Stacking Chairs  Rounded Back|Furniture|
 |Darrin Van Huff|31|3|CA-2016-138688|2016-06-12|2016-06-16|Second Class|DV-13045|OFF-LA-10000240|14.62|2|0.0|6.8714|Self-Adhesive Address Labels for Typewriters by Universal|Office Supplies|
+|...
 
 #### VIEWS 
 	
@@ -849,6 +852,7 @@ select * from viewtest;
 |Claire Gute|67|1|CA-2016-152156|2016-11-08|2016-11-11|Second Class|CG-12520|FUR-BO-10001798|261.96|2|0.0|41.9136|||
 |Claire Gute|67|2|CA-2016-152156|2016-11-08|2016-11-11|Second Class|CG-12520|FUR-CH-10000454|731.94|3|0.0|219.582|Hon Deluxe Fabric Upholstered Stacking Chairs  Rounded Back|Furniture|
 |Darrin Van Huff|31|3|CA-2016-138688|2016-06-12|2016-06-16|Second Class|DV-13045|OFF-LA-10000240|14.62|2|0.0|6.8714|Self-Adhesive Address Labels for Typewriters by Universal|Office Supplies|
+|...
 
 Outro exemplo seria criar uma view para a equipe de logística com id do pedido e informações do endereço.
 ```	
@@ -864,6 +868,7 @@ select * from logistics
 |1|CA-2016-152156|Claire Gute|Henderson|Kentucky|United States|42420|
 |2|CA-2016-152156|Claire Gute|Henderson|Kentucky|United States|42420|
 |3|CA-2016-138688|Darrin Van Huff|Los Angeles|California|United States|90036|
+|...
 	
 
 #### Exercício
@@ -879,3 +884,9 @@ drop view daily_billing;
 |----------|----------|-----|--------|
 |7981|OFF-PA-10000174|16.448|0.2|
 
+## Length
+
+Retorna o tamanho da string. Por exemplo para retornar o tamanho do nome dos clientes com tamanho igual ou maior que 15 chars.
+```
+select customer_name , length(customer_name) as "Name Size" from customer c where length(customer_name) >= 15
+```
