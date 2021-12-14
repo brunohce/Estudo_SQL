@@ -72,8 +72,6 @@ alter table science_class rename column name to student_name;
 |4|Daniela|95|
 |2|Bruno|110|
 
-</details>
-
 ## Utilizando db Supermart com tabelas customer, sales e products.
 
 #### WHERE e IN
@@ -118,7 +116,7 @@ select * from customer where age not between 20 and 30  order by age asc ;
 |...
 
 
-#### Wildcards
+#### WILDCARDS
 Wildcards são utilizados para substituir caracteres em uma string, sendo que:
 	
 	
@@ -165,9 +163,10 @@ city like 'L%' and state in ('Ohio', 'Colorado') order by customer_name asc;
 |TZ-21580|Tracy Zic|Consumer|65|United States|Louisville|Colorado|80027|West|
 
 
-#### Exercícios
+#### EXERCÍCIOS
 
-Selecionar clientes distintos de cidades que são da região norte e sul<br/>
+Obtenha a lista de todas as cidades onde a região é Sul ou Leste sem nenhum duplicatas usando instrução IN
+
 ```
 select distinct customer_name, city, region from customer where region in('North', 'East');
 ```
@@ -180,7 +179,7 @@ select distinct customer_name, city, region from customer where region in('North
 
 
 
-Selecionar todos os pedidos com valor entre 100 e 500<br/>
+Obtenha a lista de todos os pedidos em que o valor de 'vendas' está entre 100 e 500 usando o operador BETWEEN
 ```
 select * from sales where sales between 100 and 500;
 ```
@@ -193,7 +192,7 @@ select * from sales where sales between 100 and 500;
 |...
 
 
-Selecionar todos os clientes que o último nome tem 4 caracteres<br/>
+Obtenha a lista de clientes cujo sobrenome contém apenas 4 caracteres usando LIKE
 ```
 select * from customer where customer_name like '% ____';
 ```
@@ -240,9 +239,9 @@ select * from customer where segment = 'Corporate' order by 4 asc limit 3
 |MP-17965|Michael Paige|Corporate|18|United States|Lawrence|Massachusetts|1841|East|
 
 
-#### Exercícios
+#### EXERCÍCIOS
 
-Selecionar todas as vendas com desconto maior que zero ordenando por ordem decrescente de desconto
+Recupere todos os pedidos em que o valor do 'desconto' seja maior que zero ordernado pelo valor de 'desconto' de base de ordem decrescente
 ```
 select * from sales where discount > 0 order by discount desc 
 ```
@@ -366,9 +365,9 @@ select max(sales) as "Maximum Sales Value from June 2015" from sales where order
 |3050.376|
 
 
-#### Exercícios
+#### EXERCÍCIOS
 
-Calcular o total de sales
+Encontre a soma de todos os valores de "vendas".
 ```
 select sum(sales) as "Sum of Sales" from sales
 ```
@@ -376,7 +375,7 @@ select sum(sales) as "Sum of Sales" from sales
 |------------|
 |2297200.860299955|
 
-Calcular o total de clientes da região norte com idade entre 20 e 30
+Encontre a contagem do número de clientes na região norte com a idade entre 20 e 30
 ```
 select count(customer_id) from customer where region = 'North' and age between 20 and 30
 ```
@@ -400,7 +399,7 @@ select min(age) as "Minimum Customer Age from Philadelphia", max(age) as "Maximu
 |--------------------------------------|--------------------------------------|
 |18|70|
 
-#### Group by
+#### GROUP BY
 (Já foi usado mas reforçado aqui)
 
 Calcular o número de clientes em cada região
@@ -462,9 +461,9 @@ select city, region, count(distinct customer_id) as "Customer Count" from custom
 |Dallas|Central|13|
 |Jacksonville|South|11|
 
-#### Exercícios
+#### EXERCÍCIOS
 
-Tabela com valor total em vendas $, total de itens vendidos, número de pedidos, menor valor de venda, média do valor de venda, maior valor de venda
+Faça um painel mostrando os seguintes números para cada ID de produto: Total de vendas (em $) pedido por esta coluna em ordem decrescente, Quantidade total de vendas, Número de pedidos, valor máximo de vendas, valor mínimo de vendas, valor médio de vendas
 ```
 select sum(sales) as "Total Sales in $", sum(quantity) as "Total Quantity", count(distinct order_id) as "Number of Orders",
 min(sales) as "Minimum Sales Value", avg(sales) as "Average Sales Value", max(sales) as "Maximum Sales Value" from sales
@@ -532,7 +531,7 @@ create table customer_20_60 as select * from customer where age between 20 and 6
 select count (*) from customer_20_60;--597
 ```
 
-#### Inner Join
+#### INNER JOIN
 Selecionar os clientes que estão em ambas tabelas. Tem de estar tanto na customer quanto sales.
 
 ```
@@ -804,7 +803,7 @@ from sales s order by customer_id
 |AA-10315|5200|Alex Avila|
 |...
 
-#### Exercício
+#### EXERCÍCIO
 	
 Selecionar todas as colunas da tabela sales, nome e idade do cliente da tabela customer, e nome e categoria do produto da tabela products
 
@@ -875,7 +874,7 @@ select * from logistics
 |...
 	
 
-#### Exercício
+#### EXERCÍCIO
 	
 Criar uma view com ordem, valor, desconto e product id da venda mais antiga, com o nome daily_billing. Depois deletar a view.
 ```	
@@ -888,7 +887,7 @@ drop view daily_billing;
 |----------|----------|-----|--------|
 |7981|OFF-PA-10000174|16.448|0.2|
 
-#### Length
+#### LENGTH
 
 Retorna o tamanho da string. Por exemplo para retornar o tamanho do nome dos clientes com tamanho igual ou maior que 15 chars.
 ```
@@ -982,7 +981,7 @@ left join customer c on s.customer_id = c.customer_id group by c.customer_name
 |Aaron Smayling|FUR-BO-10002613, FUR-TA-10001520, OFF-BI-10000474, OFF-BI-10002931, OFF-BI-10003694, OFF-PA-10002709, OFF-PA-10003729, OFF-ST-10000649, TEC-MA-10000488, TEC-MA-10002178|
 |...
 
-#### Exercícios
+#### EXERCÍCIOS
 
 Achar o comprimento máximo de caracteres em nomes de produtos. Primeiro a opção mais simples depois uma mais complexa (melhor fazer mais simples :)).
 ```
@@ -1056,7 +1055,16 @@ select age , power(age, 2) from customer c
 |65|4225.0|
 |...
 
-#### Exercícios
+#### EXERCÍCIOS 
+
+Você está fazendo uma loteria para seus clientes. Então, escolha uma lista de 5 clientes sortudos de
+tabela do cliente usando função aleatória
+
+Suponha que você não possa cobrar do cliente em pontos de fração. Portanto, para um valor de venda de 1,63,
+você obterá 1 ou 2. Nesse cenário, descubra
+a) Receita total de vendas se você estiver cobrando o valor inteiro inferior das vendas sempre
+b) Receita total de vendas se você estiver cobrando o valor inteiro mais alto das vendas sempre
+c) A receita total de vendas se você estiver arredondando as vendas sempre
 
 #### DATE, TIME, TIMESTAMP e AGE
 
