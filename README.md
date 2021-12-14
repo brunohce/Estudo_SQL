@@ -1110,3 +1110,39 @@ extract (week from current_timestamp) as week, extract (quarter from current_tim
 |day|month|year|doy|week|quarter|
 |---|-----|----|---|----|-------|
 |10|12|2021|344|49|4|
+
+
+#### Exercício
+
+Calcular a idade do Batman considerando 6 de Abril de 1939 como data de nascimento.
+```
+select age(current_date, '1939-04-06')
+```
+|age|
+|---|
+|82 years 8 mons 7 days|
+
+
+Analisar a venda de cadeiras em cada mês. Percebe-se que as pessoas compram mais cadeiras entre Setembro e Dezembro, com uma pequena queda nas vendas em Outubro.
+```
+select month, sum(sales)::numeric(10,2) from (select order_id , sales, extract(month from order_date) as month_no, TO_CHAR(order_date, 'Month') AS "month"
+from sales s left join product p on s.product_id = p.product_id where sub_category = 'Chairs') as foo 
+group by month, month_no order by month_no
+```
+
+|month|sum|
+|-----|---|
+|January  |11285.17|
+|February |7582.94|
+|March    |21344.33|
+|April    |18526.59|
+|May      |25893.83|
+|June     |21523.37|
+|July     |23016.35|
+|August   |18339.80|
+|September|51577.22|
+|October  |24170.45|
+|November |47760.01|
+|December |57429.05|
+
+
