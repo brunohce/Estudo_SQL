@@ -1059,12 +1059,33 @@ select age , power(age, 2) from customer c
 
 Você está fazendo uma loteria para seus clientes. Então, escolha uma lista de 5 clientes sortudos de
 tabela do cliente usando função aleatória
+```
+select customer_name , random() 
+from customer c order by random limit 5
+```
+
+|customer_name|random|
+|-------------|------|
+|Ken Lonsdale|0.0002815495638053|
+|Guy Thornton|0.0023412613201827526|
+|Skye Norling|0.0035048201775289556|
+|Adrian Barton|0.00827872530328122|
+|Toby Ritter|0.009957251543074364|
+
 
 Suponha que você não possa cobrar do cliente em pontos de fração. Portanto, para um valor de venda de 1,63,
 você obterá 1 ou 2. Nesse cenário, descubra
 a) Receita total de vendas se você estiver cobrando o valor inteiro inferior das vendas sempre
 b) Receita total de vendas se você estiver cobrando o valor inteiro mais alto das vendas sempre
 c) A receita total de vendas se você estiver arredondando as vendas sempre
+```
+select sum(floor(s.sales)) as floor, sum(ceil(s.sales)) as ceil, sum(round(s.sales)) as round
+from sales s 
+```
+|floor|ceil|round|
+|-----|----|-----|
+|2291304.0|2301170.0|2297340.0|
+
 
 #### DATE, TIME, TIMESTAMP e AGE
 
